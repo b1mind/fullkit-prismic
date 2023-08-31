@@ -20,3 +20,16 @@ img {
 	max-width: 100%;
 	object-fit: cover;
 }
+
+a {
+	color: blueviolet;
+	text-decoration: none;
+}
+
+:not([aria-current='page'])a:hover {
+	border-bottom: 3px solid white;
+}
+
+[aria-current='page'] {
+	border-bottom: 3px solid white;
+}
