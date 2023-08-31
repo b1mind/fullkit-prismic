@@ -1,9 +1,10 @@
 import { createClient } from '$lib/prismicio';
 
-export async function load({ fetch, request }) {
-	const client = createClient({ fetch });
+export async function load() {
+	const client = createClient();
 
-	const { data } = await client.getSingle('navigation');
+	const navigation = await client.getSingle('navigation');
+	const settings = await client.getSingle('settings');
 
-	return data;
+	return { navigation, settings };
 }

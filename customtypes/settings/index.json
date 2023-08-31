@@ -1,6 +1,6 @@
 {
-	"id": "setttings",
-	"label": "setttings",
+	"id": "settings",
+	"label": "settings",
 	"format": "custom",
 	"repeatable": false,
 	"status": true,

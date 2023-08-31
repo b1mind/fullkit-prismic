@@ -137,15 +137,15 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 >;
 
 /**
- * Content for setttings documents
+ * Content for settings documents
  */
-interface SetttingsDocumentData {
+interface SettingsDocumentData {
 	/**
-	 * siteName field in *setttings*
+	 * siteName field in *settings*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: setttings.siteName
+	 * - **API ID Path**: settings.siteName
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
@@ -153,21 +153,21 @@ interface SetttingsDocumentData {
 }
 
 /**
- * setttings document from Prismic
+ * settings document from Prismic
  *
- * - **API ID**: `setttings`
+ * - **API ID**: `settings`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SetttingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
-	Simplify<SetttingsDocumentData>,
-	'setttings',
+export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<SettingsDocumentData>,
+	'settings',
 	Lang
 >;
 
-export type AllDocumentTypes = NavigationDocument | PageDocument | SetttingsDocument;
+export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
 
 /**
  * Primary content in *RichText → Primary*
@@ -226,8 +226,8 @@ declare module '@prismicio/client' {
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
-			SetttingsDocument,
-			SetttingsDocumentData,
+			SettingsDocument,
+			SettingsDocumentData,
 			AllDocumentTypes,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,

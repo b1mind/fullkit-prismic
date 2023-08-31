@@ -3,6 +3,9 @@
 	import { page } from '$app/stores';
 
 	export let data;
+	let { navigation, settings } = data;
+
+	console.dir(settings);
 </script>
 
 <svelte:head>
@@ -19,8 +22,11 @@
 </svelte:head>
 
 <header>
+	<b>
+		{settings.data.siteName}
+	</b>
 	<nav>
-		{#each data.nav as nav}
+		{#each navigation.data?.nav as nav}
 			<a href={nav.link.url}>
 				{nav.linkName}
 			</a>
@@ -33,6 +39,13 @@
 </main>
 
 <style>
+	header {
+		padding: 1rem;
+		display: grid;
+		grid-auto-flow: column;
+		justify-content: space-between;
+	}
+
 	a + a {
 		margin-left: 1rem;
 	}
