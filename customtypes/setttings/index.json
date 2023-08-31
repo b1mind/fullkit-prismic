@@ -1,0 +1,18 @@
+{
+	"id": "setttings",
+	"label": "setttings",
+	"format": "custom",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"siteName": {
+				"type": "Text",
+				"config": {
+					"label": "siteName",
+					"placeholder": ""
+				}
+			}
+		}
+	}
+}
