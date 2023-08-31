@@ -170,6 +170,58 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
 
 /**
+ * Primary content in *Card → Primary*
+ */
+export interface CardSliceDefaultPrimary {
+	/**
+	 * image field in *Card → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * text field in *Card → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Card Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<CardSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Card*
+ */
+type CardSliceVariation = CardSliceDefault;
+
+/**
+ * Card Shared Slice
+ *
+ * - **API ID**: `card`
+ * - **Description**: Card
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSlice = prismic.SharedSlice<'card', CardSliceVariation>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -229,6 +281,10 @@ declare module '@prismicio/client' {
 			SettingsDocument,
 			SettingsDocumentData,
 			AllDocumentTypes,
+			CardSlice,
+			CardSliceDefaultPrimary,
+			CardSliceVariation,
+			CardSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,
