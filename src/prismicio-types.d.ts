@@ -19,14 +19,14 @@ export interface NavigationDocumentDataNavItem {
 	link: prismic.LinkField;
 
 	/**
-	 * linkName field in *Navigation → nav*
+	 * label field in *Navigation → nav*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: navigation.nav[].linkName
+	 * - **API ID Path**: navigation.nav[].label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	linkName: prismic.KeyTextField;
+	label: prismic.KeyTextField;
 }
 
 /**

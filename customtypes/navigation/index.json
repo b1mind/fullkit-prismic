@@ -19,10 +19,10 @@
 								"select": null
 							}
 						},
-						"linkName": {
+						"label": {
 							"type": "Text",
 							"config": {
-								"label": "linkName",
+								"label": "label",
 								"placeholder": ""
 							}
 						}

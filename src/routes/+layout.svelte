@@ -1,11 +1,11 @@
 <script>
 	import './global.scss';
 	import { page } from '$app/stores';
+	import { PrismicLink, PrismicText } from '@prismicio/svelte';
 
 	export let data;
-	let { navigation, settings } = data;
-
-	console.dir(settings);
+	const { navigation, settings } = data;
+	console.log(data.navigation.data.nav);
 </script>
 
 <svelte:head>
@@ -26,10 +26,10 @@
 		{settings.data.siteName}
 	</b>
 	<nav>
-		{#each navigation.data?.nav as nav}
-			<a href={nav.link.url}>
-				{nav.linkName}
-			</a>
+		{#each navigation.data.nav as nav}
+			<PrismicLink field={nav.link}>
+				{nav.label}
+			</PrismicLink>
 		{/each}
 	</nav>
 </header>
@@ -44,9 +44,12 @@
 		display: grid;
 		grid-auto-flow: column;
 		justify-content: space-between;
+		font-size: 1.25rem;
 	}
 
-	a + a {
-		margin-left: 1rem;
+	nav {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 1rem;
 	}
 </style>
