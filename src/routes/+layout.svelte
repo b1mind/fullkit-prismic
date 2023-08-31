@@ -5,7 +5,6 @@
 
 	export let data;
 	const { navigation, settings } = data;
-	console.log(data.navigation.data.nav);
 </script>
 
 <svelte:head>
@@ -27,9 +26,14 @@
 	</b>
 	<nav>
 		{#each navigation.data.nav as nav}
-			<PrismicLink field={nav.link}>
-				{nav.label}
-			</PrismicLink>
+			<span>
+				<PrismicLink
+					aria-current={$page.url.pathname === nav.link.url ? 'page' : undefined}
+					field={nav.link}
+				>
+					{nav.label}
+				</PrismicLink>
+			</span>
 		{/each}
 	</nav>
 </header>
