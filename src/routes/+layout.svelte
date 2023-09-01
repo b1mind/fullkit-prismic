@@ -3,7 +3,11 @@
 	import { page } from '$app/stores';
 	import { PrismicLink, PrismicText } from '@prismicio/svelte';
 
+	/** @type {import('./$types').PageData} */
 	export let data;
+
+	//learn how to get the proper types lul
+	/** @type any */
 	const { navigation, settings, footer } = data;
 
 	let date = new Date().getFullYear();
@@ -29,10 +33,10 @@
 		</b>
 		<nav>
 			{#each navigation.data.nav as nav}
-				<PrismicLink
-					aria-current={$page.url.pathname === nav.link.url ? 'page' : undefined}
-					field={nav.link}
-				>
+				<!-- @ts-ignore -->
+				{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
+
+				<PrismicLink aria-current={currentUrl} field={nav.link}>
 					{nav.label}
 				</PrismicLink>
 			{/each}

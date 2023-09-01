@@ -1,8 +1,7 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
-	export let size = 'sm';
 </script>
 
-<Heading tag="h3" --heading="var(--title-{size})">
+<Heading tag="h3" size="sm">
 	<slot />
 </Heading>

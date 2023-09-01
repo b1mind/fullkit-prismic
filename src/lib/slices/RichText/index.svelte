@@ -4,6 +4,7 @@
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
+	$$restProps;
 </script>
 
 <section class="container">
