@@ -1,6 +1,7 @@
 <script>
-	import { SliceZone, PrismicRichText } from '@prismicio/svelte';
+	import { SliceZone } from '@prismicio/svelte';
 	import { components } from '$lib/slices';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
