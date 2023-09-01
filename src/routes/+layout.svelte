@@ -33,7 +33,6 @@
 		</b>
 		<nav>
 			{#each navigation.data.nav as nav}
-				<!-- @ts-ignore -->
 				{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
 
 				<PrismicLink aria-current={currentUrl} field={nav.link}>
