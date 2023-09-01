@@ -1,13 +1,8 @@
 <script>
-	export let size = 'lrg';
+	import Heading from '$lib/components/Heading.svelte';
+	export let size = 'lg';
 </script>
 
-<h1 style="--size:var(--title-{size});">
+<Heading tag="h1" --size="var(--title-{size})">
 	<slot />
-</h1>
-
-<style>
-	h1 {
-		font-size: var(--size, 2rem);
-	}
-</style>
+</Heading>

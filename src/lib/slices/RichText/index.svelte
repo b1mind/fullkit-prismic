@@ -1,5 +1,5 @@
 <script>
-	import { PrismicRichText } from '@prismicio/svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import Label from './Label.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
