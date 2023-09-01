@@ -5,6 +5,7 @@ export async function load() {
 
 	const navigation = await client.getSingle('navigation');
 	const settings = await client.getSingle('settings');
+	const footer = await client.getSingle('footer');
 
-	return { navigation, settings };
+	return { navigation, settings, footer };
 }

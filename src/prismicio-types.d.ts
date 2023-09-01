@@ -5,6 +5,37 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+	/**
+	 * policy field in *Footer*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: Policy ONLY
+	 * - **API ID Path**: footer.policy
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	policy: prismic.LinkField;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<FooterDocumentData>,
+	'footer',
+	Lang
+>;
+
+/**
  * Item in *Navigation → nav*
  */
 export interface NavigationDocumentDataNavItem {
@@ -167,24 +198,18 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes =
+	| FooterDocument
+	| NavigationDocument
+	| PageDocument
+	| SettingsDocument;
 
 /**
- * Primary content in *Card → Primary*
+ * Primary content in *TextImage → Primary*
  */
 export interface CardSliceDefaultPrimary {
 	/**
-	 * image field in *Card → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: card.primary.image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-
-	/**
-	 * text field in *Card → Primary*
+	 * text field in *TextImage → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -192,10 +217,20 @@ export interface CardSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField;
+
+	/**
+	 * image field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Card Slice
+ * Default variation for TextImage Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -208,12 +243,50 @@ export type CardSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Card*
+ * Primary content in *TextImage → Primary*
  */
-type CardSliceVariation = CardSliceDefault;
+export interface CardSliceImageLeftPrimary {
+	/**
+	 * image field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * text field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+}
 
 /**
- * Card Shared Slice
+ * Image Left variation for TextImage Slice
+ *
+ * - **API ID**: `imageLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSliceImageLeft = prismic.SharedSliceVariation<
+	'imageLeft',
+	Simplify<CardSliceImageLeftPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *TextImage*
+ */
+type CardSliceVariation = CardSliceDefault | CardSliceImageLeft;
+
+/**
+ * TextImage Shared Slice
  *
  * - **API ID**: `card`
  * - **Description**: Card
@@ -273,6 +346,8 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			FooterDocument,
+			FooterDocumentData,
 			NavigationDocument,
 			NavigationDocumentData,
 			PageDocument,
@@ -283,8 +358,10 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			CardSlice,
 			CardSliceDefaultPrimary,
+			CardSliceImageLeftPrimary,
 			CardSliceVariation,
 			CardSliceDefault,
+			CardSliceImageLeft,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

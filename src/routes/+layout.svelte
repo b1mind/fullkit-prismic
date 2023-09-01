@@ -4,7 +4,9 @@
 	import { PrismicLink, PrismicText } from '@prismicio/svelte';
 
 	export let data;
-	const { navigation, settings } = data;
+	const { navigation, settings, footer } = data;
+
+	let date = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -20,31 +22,44 @@
 	{/if}
 </svelte:head>
 
-<header>
-	<b>
-		{settings.data.siteName}
-	</b>
-	<nav>
-		{#each navigation.data.nav as nav}
-			<span>
+<div class="wrapper">
+	<header>
+		<b>
+			{settings.data.siteName}
+		</b>
+		<nav>
+			{#each navigation.data.nav as nav}
 				<PrismicLink
 					aria-current={$page.url.pathname === nav.link.url ? 'page' : undefined}
 					field={nav.link}
 				>
 					{nav.label}
 				</PrismicLink>
-			</span>
-		{/each}
-	</nav>
-</header>
+			{/each}
+		</nav>
+	</header>
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
+
+	<footer>
+		<b> {settings.data.siteName} &#169; copyright {date}</b>
+		<PrismicLink field={footer.data.policy}>Privacy Policy</PrismicLink>
+	</footer>
+</div>
 
 <style>
+	main {
+		grid-column: content;
+		margin-top: 3rem;
+		display: grid;
+		gap: 12rem;
+	}
+
 	header {
-		padding: 1rem;
+		grid-column: content;
+		padding-block: 1rem;
 		display: grid;
 		grid-auto-flow: column;
 		justify-content: space-between;
@@ -54,6 +69,15 @@
 	nav {
 		display: grid;
 		grid-auto-flow: column;
+		align-items: center;
 		gap: 1rem;
+	}
+
+	footer {
+		grid-column: content;
+		padding-block: 1rem;
+		display: grid;
+		grid-auto-flow: column;
+		justify-content: space-between;
 	}
 </style>

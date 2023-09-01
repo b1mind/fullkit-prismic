@@ -1,0 +1,20 @@
+{
+	"id": "footer",
+	"label": "Footer",
+	"format": "custom",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"policy": {
+				"type": "Link",
+				"config": {
+					"label": "policy",
+					"placeholder": "Policy ONLY",
+					"allowTargetBlank": true,
+					"select": null
+				}
+			}
+		}
+	}
+}
