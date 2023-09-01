@@ -23,6 +23,15 @@ const routes = [
 	{
 		type: 'page',
 		path: '/:uid'
+	},
+	{
+		type: 'sliceHome',
+		uid: 'slices',
+		path: '/slices'
+	},
+	{
+		type: 'slicePage',
+		path: '/slices/:uid'
 	}
 ];
 

@@ -198,11 +198,233 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
+type SliceHomeDocumentDataSlicesSlice = never;
+
+/**
+ * Content for SliceHome documents
+ */
+interface SliceHomeDocumentData {
+	/**
+	 * text field in *SliceHome*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceHome.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * title field in *SliceHome*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceHome.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+
+	/**
+	 * Slice Zone field in *SliceHome*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceHome.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<SliceHomeDocumentDataSlicesSlice>
+	/**
+	 * Meta Description field in *SliceHome*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: sliceHome.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *SliceHome*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceHome.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+
+	/**
+	 * Meta Title field in *SliceHome*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: sliceHome.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_title: prismic.KeyTextField;
+}
+
+/**
+ * SliceHome document from Prismic
+ *
+ * - **API ID**: `sliceHome`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SliceHomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<SliceHomeDocumentData>,
+	'sliceHome',
+	Lang
+>;
+
+/**
+ * Item in *sliceNav → SideNav*
+ */
+export interface SliceNavDocumentDataSideNavItem {
+	/**
+	 * link field in *sliceNav → SideNav*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceNav.sideNav[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * text field in *sliceNav → SideNav*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceNav.sideNav[].text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	text: prismic.KeyTextField;
+}
+
+/**
+ * Content for sliceNav documents
+ */
+interface SliceNavDocumentData {
+	/**
+	 * SideNav field in *sliceNav*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: sliceNav.sideNav[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	sideNav: prismic.GroupField<Simplify<SliceNavDocumentDataSideNavItem>>;
+}
+
+/**
+ * sliceNav document from Prismic
+ *
+ * - **API ID**: `sliceNav`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SliceNavDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<SliceNavDocumentData>,
+	'sliceNav',
+	Lang
+>;
+
+type SlicePageDocumentDataSlicesSlice = CardSlice | RichTextSlice;
+
+/**
+ * Content for SlicePage documents
+ */
+interface SlicePageDocumentData {
+	/**
+	 * Title field in *SlicePage*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slicePage.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+
+	/**
+	 * Slice Zone field in *SlicePage*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slicePage.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<SlicePageDocumentDataSlicesSlice>
+	/**
+	 * Meta Description field in *SlicePage*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: slicePage.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *SlicePage*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: slicePage.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+
+	/**
+	 * Meta Title field in *SlicePage*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: slicePage.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_title: prismic.KeyTextField;
+}
+
+/**
+ * SlicePage document from Prismic
+ *
+ * - **API ID**: `slicePage`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SlicePageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<SlicePageDocumentData>,
+	'slicePage',
+	Lang
+>;
+
 export type AllDocumentTypes =
 	| FooterDocument
 	| NavigationDocument
 	| PageDocument
-	| SettingsDocument;
+	| SettingsDocument
+	| SliceHomeDocument
+	| SliceNavDocument
+	| SlicePageDocument;
 
 /**
  * Primary content in *TextImage → Primary*
@@ -355,6 +577,14 @@ declare module '@prismicio/client' {
 			PageDocumentDataSlicesSlice,
 			SettingsDocument,
 			SettingsDocumentData,
+			SliceHomeDocument,
+			SliceHomeDocumentData,
+			SliceHomeDocumentDataSlicesSlice,
+			SliceNavDocument,
+			SliceNavDocumentData,
+			SlicePageDocument,
+			SlicePageDocumentData,
+			SlicePageDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			CardSlice,
 			CardSliceDefaultPrimary,
