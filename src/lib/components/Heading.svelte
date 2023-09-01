@@ -8,6 +8,6 @@
 
 <style>
 	.title {
-		font-size: var(--size, 2rem);
+		font-size: var(--heading, 2rem);
 	}
 </style>

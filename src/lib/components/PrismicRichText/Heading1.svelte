@@ -3,6 +3,6 @@
 	export let size = 'lg';
 </script>
 
-<Heading tag="h1" --size="var(--title-{size})">
+<Heading tag="h1" --heading="var(--title-{size})">
 	<slot />
 </Heading>

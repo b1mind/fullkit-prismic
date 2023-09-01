@@ -3,6 +3,6 @@
 	export let size = 'sm';
 </script>
 
-<Heading tag="h3" --size="var(--title-{size})">
+<Heading tag="h3" --heading="var(--title-{size})">
 	<slot />
 </Heading>
