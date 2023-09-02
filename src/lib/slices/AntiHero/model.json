@@ -15,10 +15,10 @@
 				"heading": {
 					"type": "StructuredText",
 					"config": {
-						"label": "heading",
-						"placeholder": "",
+						"label": "heading(optional)",
+						"placeholder": "h2 or label",
 						"allowTargetBlank": true,
-						"single": "heading1,heading2,heading3",
+						"single": "paragraph,heading2",
 						"labels": ["title-lg"]
 					}
 				},
@@ -59,7 +59,7 @@
 				"image": {
 					"type": "Image",
 					"config": {
-						"label": "image",
+						"label": "image (optional)",
 						"constraint": {
 							"width": 920
 						},
@@ -80,10 +80,11 @@
 				"heading": {
 					"type": "StructuredText",
 					"config": {
-						"label": "heading",
-						"placeholder": "",
+						"label": "heading(optional)",
+						"placeholder": "h2 or label",
 						"allowTargetBlank": true,
-						"single": "heading1,heading2,heading3"
+						"single": "paragraph,heading2",
+						"labels": ["title-xl", "title-lg", "title-md", "title-sml"]
 					}
 				},
 				"text": {
@@ -122,7 +123,7 @@
 				"image": {
 					"type": "Image",
 					"config": {
-						"label": "image",
+						"label": "image(optional)",
 						"constraint": {},
 						"thumbnails": []
 					}

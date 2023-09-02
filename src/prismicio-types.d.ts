@@ -35,7 +35,7 @@ export type FooterDocument<Lang extends string = string> = prismic.PrismicDocume
 	Lang
 >;
 
-type HomePageDocumentDataSlicesSlice = AntiHeroSlice | CardSlice;
+type HomePageDocumentDataSlicesSlice = AntiHeroSlice | CardSlice | HeroSlice;
 
 /**
  * Content for Home Page documents
@@ -167,7 +167,12 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice | CardSlice;
+type PageDocumentDataSlicesSlice =
+	| RichTextSlice
+	| CardSlice
+	| AntiHeroSlice
+	| HeroSlice
+	| MarkDownSlice;
 
 /**
  * Content for Page documents
@@ -274,7 +279,12 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-type SliceHomeDocumentDataSlicesSlice = never;
+type SliceHomeDocumentDataSlicesSlice =
+	| HeroSlice
+	| AntiHeroSlice
+	| RichTextSlice
+	| CardSlice
+	| MarkDownSlice;
 
 /**
  * Content for SliceHome documents
@@ -417,7 +427,12 @@ export type SliceNavDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-type SlicePageDocumentDataSlicesSlice = CardSlice | RichTextSlice;
+type SlicePageDocumentDataSlicesSlice =
+	| CardSlice
+	| RichTextSlice
+	| AntiHeroSlice
+	| HeroSlice
+	| MarkDownSlice;
 
 /**
  * Content for SlicePage documents
@@ -508,14 +523,14 @@ export type AllDocumentTypes =
  */
 export interface AntiHeroSliceDefaultPrimary {
 	/**
-	 * heading field in *AntiHero → Primary*
+	 * heading(optional) field in *AntiHero → Primary*
 	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: h2 or label
 	 * - **API ID Path**: anti_hero.primary.heading
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	heading: prismic.TitleField;
+	heading: prismic.RichTextField;
 
 	/**
 	 * text field in *AntiHero → Primary*
@@ -558,7 +573,7 @@ export interface AntiHeroSliceDefaultPrimary {
 	button_text: prismic.KeyTextField;
 
 	/**
-	 * image field in *AntiHero → Primary*
+	 * image (optional) field in *AntiHero → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -584,16 +599,16 @@ export type AntiHeroSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *AntiHero → Primary*
  */
-export interface AntiHeroSliceFullPrimary {
+export interface AntiHeroSlicePFullPrimary {
 	/**
-	 * heading field in *AntiHero → Primary*
+	 * heading(optional) field in *AntiHero → Primary*
 	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: h2 or label
 	 * - **API ID Path**: anti_hero.primary.heading
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	heading: prismic.TitleField;
+	heading: prismic.RichTextField;
 
 	/**
 	 * text field in *AntiHero → Primary*
@@ -636,7 +651,7 @@ export interface AntiHeroSliceFullPrimary {
 	button_text: prismic.KeyTextField;
 
 	/**
-	 * image field in *AntiHero → Primary*
+	 * image(optional) field in *AntiHero → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -649,20 +664,20 @@ export interface AntiHeroSliceFullPrimary {
 /**
  * Full Width variation for AntiHero Slice
  *
- * - **API ID**: `full`
+ * - **API ID**: `pFull`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type AntiHeroSliceFull = prismic.SharedSliceVariation<
-	'full',
-	Simplify<AntiHeroSliceFullPrimary>,
+export type AntiHeroSlicePFull = prismic.SharedSliceVariation<
+	'pFull',
+	Simplify<AntiHeroSlicePFullPrimary>,
 	never
 >;
 
 /**
  * Slice variation for *AntiHero*
  */
-type AntiHeroSliceVariation = AntiHeroSliceDefault | AntiHeroSliceFull;
+type AntiHeroSliceVariation = AntiHeroSliceDefault | AntiHeroSlicePFull;
 
 /**
  * AntiHero Shared Slice
@@ -714,7 +729,7 @@ export type CardSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *TextImage → Primary*
  */
-export interface CardSliceImageLeftPrimary {
+export interface CardSlicePImageLeftPrimary {
 	/**
 	 * image field in *TextImage → Primary*
 	 *
@@ -739,20 +754,20 @@ export interface CardSliceImageLeftPrimary {
 /**
  * Image Left variation for TextImage Slice
  *
- * - **API ID**: `imageLeft`
+ * - **API ID**: `pImageLeft`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CardSliceImageLeft = prismic.SharedSliceVariation<
-	'imageLeft',
-	Simplify<CardSliceImageLeftPrimary>,
+export type CardSlicePImageLeft = prismic.SharedSliceVariation<
+	'pImageLeft',
+	Simplify<CardSlicePImageLeftPrimary>,
 	never
 >;
 
 /**
  * Primary content in *TextImage → Primary*
  */
-export interface CardSliceFullPrimary {
+export interface CardSlicePFullPrimary {
 	/**
 	 * text field in *TextImage → Primary*
 	 *
@@ -777,20 +792,20 @@ export interface CardSliceFullPrimary {
 /**
  * full variation for TextImage Slice
  *
- * - **API ID**: `full`
+ * - **API ID**: `pFull`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CardSliceFull = prismic.SharedSliceVariation<
-	'full',
-	Simplify<CardSliceFullPrimary>,
+export type CardSlicePFull = prismic.SharedSliceVariation<
+	'pFull',
+	Simplify<CardSlicePFullPrimary>,
 	never
 >;
 
 /**
  * Primary content in *TextImage → Primary*
  */
-export interface CardSliceFullImageLeftPrimary {
+export interface CardSlicePFullImageLeftPrimary {
 	/**
 	 * text field in *TextImage → Primary*
 	 *
@@ -813,15 +828,15 @@ export interface CardSliceFullImageLeftPrimary {
 }
 
 /**
- * full Image Left variation for TextImage Slice
+ * Full Image Left variation for TextImage Slice
  *
- * - **API ID**: `fullImageLeft`
+ * - **API ID**: `pFullImageLeft`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CardSliceFullImageLeft = prismic.SharedSliceVariation<
-	'fullImageLeft',
-	Simplify<CardSliceFullImageLeftPrimary>,
+export type CardSlicePFullImageLeft = prismic.SharedSliceVariation<
+	'pFullImageLeft',
+	Simplify<CardSlicePFullImageLeftPrimary>,
 	never
 >;
 
@@ -830,9 +845,9 @@ export type CardSliceFullImageLeft = prismic.SharedSliceVariation<
  */
 type CardSliceVariation =
 	| CardSliceDefault
-	| CardSliceImageLeft
-	| CardSliceFull
-	| CardSliceFullImageLeft;
+	| CardSlicePImageLeft
+	| CardSlicePFull
+	| CardSlicePFullImageLeft;
 
 /**
  * TextImage Shared Slice
@@ -842,6 +857,176 @@ type CardSliceVariation =
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type CardSlice = prismic.SharedSlice<'card', CardSliceVariation>;
+
+/**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+	/**
+	 * heading field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: !one per page
+	 * - **API ID Path**: hero.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+
+	/**
+	 * text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * text2 field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * button field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: hero.primary.button
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button: prismic.LinkField;
+
+	/**
+	 * button text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: hero.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_text: prismic.KeyTextField;
+
+	/**
+	 * image field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HeroSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSlicePFullPrimary {
+	/**
+	 * heading field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: !one per page
+	 * - **API ID Path**: hero.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+
+	/**
+	 * text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * text2 field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * button field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.button
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button: prismic.LinkField;
+
+	/**
+	 * button text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_text: prismic.KeyTextField;
+
+	/**
+	 * image field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Full Width variation for Hero Slice
+ *
+ * - **API ID**: `pFull`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlicePFull = prismic.SharedSliceVariation<
+	'pFull',
+	Simplify<HeroSlicePFullPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault | HeroSlicePFull;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
  * Primary content in *MarkDown → Primary*
@@ -960,20 +1145,26 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			AntiHeroSlice,
 			AntiHeroSliceDefaultPrimary,
-			AntiHeroSliceFullPrimary,
+			AntiHeroSlicePFullPrimary,
 			AntiHeroSliceVariation,
 			AntiHeroSliceDefault,
-			AntiHeroSliceFull,
+			AntiHeroSlicePFull,
 			CardSlice,
 			CardSliceDefaultPrimary,
-			CardSliceImageLeftPrimary,
-			CardSliceFullPrimary,
-			CardSliceFullImageLeftPrimary,
+			CardSlicePImageLeftPrimary,
+			CardSlicePFullPrimary,
+			CardSlicePFullImageLeftPrimary,
 			CardSliceVariation,
 			CardSliceDefault,
-			CardSliceImageLeft,
-			CardSliceFull,
-			CardSliceFullImageLeft,
+			CardSlicePImageLeft,
+			CardSlicePFull,
+			CardSlicePFullImageLeft,
+			HeroSlice,
+			HeroSliceDefaultPrimary,
+			HeroSlicePFullPrimary,
+			HeroSliceVariation,
+			HeroSliceDefault,
+			HeroSlicePFull,
 			MarkDownSlice,
 			MarkDownSliceDefaultPrimary,
 			MarkDownSliceVariation,

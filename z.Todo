@@ -1,12 +1,23 @@
 Todo:
-  ☐ use Slice Simulator to make more slices
+  ✔ make design system and slice variation choices @done
+  ✔ start tokens and data-slice-variation logic @done
+  ☐ use Slice Simulator to make more slices and variations
+    ✔ Hero (h1 only) / anti-Heros (h2 or Text Only) @done
+    ☐ anti-hero title labels
+    ☐ TextImage / more variations
+    ☐ cards / grid - flex variations
+    ☐ large text / single quote variations
+    ☐ 2 col text with middle cutter border
+    
   ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
     ☐ links from getAll 'SlicePage'
     ☐ explain what the page is about (showing off slices)
+
   ☐ snag a design + colors from some place just to jaz this demo up
   ☐ finish css props and tokens + implement rest
 
 Learn: 
+  ☐ learn a middle ground for when to make a new slice vs variation (UX/DX)
   ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)

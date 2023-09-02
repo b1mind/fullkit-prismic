@@ -68,35 +68,7 @@ body {
 	background-color: #1b1b1b;
 }
 
-.wrapper {
-	min-height: 100%;
-	min-height: 100svh;
-	display: grid;
-	grid-template-columns:
-		[full-start]
-		minmax(1rem, 1fr)
-		[content-start]
-		minmax(0, var(--content-max))
-		[content-end]
-		minmax(1rem, 1fr)
-		[full-end];
-	grid-template-rows: auto 1fr auto;
-}
-
-.wrap-full,
-[data-slice-variation*='Full'] {
-	grid-column: full;
-	display: grid;
-	grid-template-columns: inherit;
-}
-
-.container {
-	//todo refactor containers to use wrapper
-	grid-column: content;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
+//> defaults
 img {
 	display: block;
 	max-width: 100%;
@@ -129,3 +101,33 @@ p + p {
 // .spacer > * + * {
 // 	margin-block-start: 10rem;
 // }
+
+//> utils
+.wrapper {
+	min-height: 100%;
+	min-height: 100svh;
+	display: grid;
+	grid-template-columns:
+		[full-start]
+		minmax(1rem, 1fr)
+		[content-start]
+		minmax(0, var(--content-max))
+		[content-end]
+		minmax(1rem, 1fr)
+		[full-end];
+	grid-template-rows: auto 1fr auto;
+}
+
+.wrap-full,
+[data-slice-variation*='Full'] {
+	grid-column: full;
+	display: grid;
+	grid-template-columns: inherit;
+}
+
+.container {
+	//todo refactor containers to use wrapper
+	grid-column: content;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}

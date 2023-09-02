@@ -35,7 +35,23 @@
 				"type": "Slices",
 				"fieldset": "Slice Zone",
 				"config": {
-					"choices": {}
+					"choices": {
+						"hero": {
+							"type": "SharedSlice"
+						},
+						"anti_hero": {
+							"type": "SharedSlice"
+						},
+						"rich_text": {
+							"type": "SharedSlice"
+						},
+						"card": {
+							"type": "SharedSlice"
+						},
+						"mark_down": {
+							"type": "SharedSlice"
+						}
+					}
 				}
 			}
 		},

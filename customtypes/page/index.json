@@ -32,6 +32,15 @@
 						},
 						"card": {
 							"type": "SharedSlice"
+						},
+						"anti_hero": {
+							"type": "SharedSlice"
+						},
+						"hero": {
+							"type": "SharedSlice"
+						},
+						"mark_down": {
+							"type": "SharedSlice"
 						}
 					}
 				}

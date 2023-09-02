@@ -30,6 +30,9 @@
 						},
 						"card": {
 							"type": "SharedSlice"
+						},
+						"hero": {
+							"type": "SharedSlice"
 						}
 					}
 				}

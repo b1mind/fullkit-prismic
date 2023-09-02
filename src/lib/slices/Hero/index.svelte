@@ -13,29 +13,19 @@
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<div class="layer">
 		<div class="img">
-			{#if prismic.isFilled.image(slice.primary.image)}
-				<PrismicImage field={slice.primary.image} />
-			{/if}
+			<PrismicImage field={slice.primary.image} />
 		</div>
-
 		<header>
-			{#if prismic.isFilled.richText(slice.primary.heading)}
-				<PrismicRichText
-					field={slice.primary.heading}
-					components={{
-						label: Label
-					}}
-				/>
-			{/if}
-
-			{#if prismic.isFilled.richText(slice.primary.text)}
-				<PrismicRichText field={slice.primary.text} />
-			{/if}
-
+			<PrismicRichText
+				field={slice.primary.heading}
+				components={{
+					label: Label
+				}}
+			/>
+			<PrismicRichText field={slice.primary.text} />
 			{#if prismic.isFilled.richText(slice.primary.text2)}
 				<PrismicRichText field={slice.primary.text2} />
 			{/if}
-
 			{#if prismic.isFilled.link(slice.primary.button)}
 				<PrismicLink field={slice.primary.button}>{slice.primary.button_text}</PrismicLink>
 			{/if}
