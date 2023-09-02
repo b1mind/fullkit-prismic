@@ -1,10 +1,12 @@
 Todo:
+  ☐ use Slice Simulator to make more slices
   ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
   ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
   ☐ Learn more about slices options. (Finish Alex's course video)
 
 WishList:
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
+  ☐ make a "blog" after learning Graph Query + Content-Relationships
   ☐ convert this to a template we can npx into a new Prismic repo/site
 
 Debt:
