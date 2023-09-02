@@ -1,12 +1,19 @@
 Todo:
   ☐ use Slice Simulator to make more slices
   ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
-  ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
-  ☐ Learn more about slices options. (Finish Alex's course video)
+    ☐ links from getAll 'SlicePage'
+    ☐ explain what the page is about (showing off slices)
+  ☐ snag a design + colors from some place just to jaz this demo up
+  ☐ finish css props and tokens + implement rest
+
+Learn: 
+  ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
+  ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
+  ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
 WishList:
-  ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
-  ☐ make a "blog" after learning Graph Query + Content-Relationships
+  ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
+  ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
   ☐ convert this to a template we can npx into a new Prismic repo/site
 
 Debt:
