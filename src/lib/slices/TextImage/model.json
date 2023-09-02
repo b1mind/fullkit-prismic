@@ -36,7 +36,7 @@
 			"items": {}
 		},
 		{
-			"id": "imageLeft",
+			"id": "pImageLeft",
 			"name": "Image Left",
 			"docURL": "...",
 			"version": "initial",
@@ -67,7 +67,7 @@
 			"items": {}
 		},
 		{
-			"id": "full",
+			"id": "pFull",
 			"name": "full",
 			"docURL": "...",
 			"version": "initial",
@@ -98,7 +98,7 @@
 			"items": {}
 		},
 		{
-			"id": "fullImageLeft",
+			"id": "pFullImageLeft",
 			"name": "Full Image Left",
 			"docURL": "...",
 			"version": "initial",

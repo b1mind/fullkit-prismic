@@ -69,7 +69,7 @@
 		}
 	}
 
-	[data-slice-variation='full'] {
+	[data-slice-variation*='Full'] {
 		text-align: center;
 		background-color: var(--secondary-bg);
 		& > * {

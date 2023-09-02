@@ -43,7 +43,7 @@
 	}
 
 	// insensitive case support ok but syntax is borked
-	[data-slice-variation*='imageLeft' i] {
+	[data-slice-variation*='ImageLeft'] {
 		figure {
 			grid-template-areas: 'img text';
 			@media (max-width: 600px) {
@@ -56,7 +56,7 @@
 
 	//todo decide how to do multiple full variants...
 	//give all letter id before pFull pFullImageLeft pImageLeft then always uppercase?
-	[data-slice-variation*='full'] {
+	[data-slice-variation*='Full'] {
 		//have to override section
 		grid-column: full;
 		background-color: var(--secondary-bg-light, grey);
