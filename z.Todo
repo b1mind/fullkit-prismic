@@ -1,0 +1,10 @@
+Todo:
+  ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
+  ☐ Learn more about slices options. (Finish Alex's course video)
+
+WishList:
+  ☐ convert this to a template we can npx into a new Prismic repo/site
+
+Debt:
+  ☐ learn how to use jsDocs and properly fix @ type any
+  ☐ fix $$restProps on components/slices (is there another way?)
