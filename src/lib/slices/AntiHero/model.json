@@ -27,7 +27,93 @@
             "label": "text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "single": "strong"
+          }
+        },
+        "text2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text2",
+            "placeholder": "optional",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "optional",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button text",
+            "placeholder": "optional"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "full",
+      "name": "Full Width",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "text2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button text",
+            "placeholder": ""
           }
         },
         "image": {

@@ -528,6 +528,36 @@ export interface AntiHeroSliceDefaultPrimary {
 	text: prismic.RichTextField;
 
 	/**
+	 * text2 field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: anti_hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * button field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: anti_hero.primary.button
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button: prismic.LinkField;
+
+	/**
+	 * button text field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: anti_hero.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_text: prismic.KeyTextField;
+
+	/**
 	 * image field in *AntiHero → Primary*
 	 *
 	 * - **Field Type**: Image
@@ -552,9 +582,87 @@ export type AntiHeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *AntiHero → Primary*
+ */
+export interface AntiHeroSliceFullPrimary {
+	/**
+	 * heading field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+
+	/**
+	 * text field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * text2 field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * button field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.button
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button: prismic.LinkField;
+
+	/**
+	 * button text field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_text: prismic.KeyTextField;
+
+	/**
+	 * image field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Full Width variation for AntiHero Slice
+ *
+ * - **API ID**: `full`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AntiHeroSliceFull = prismic.SharedSliceVariation<
+	'full',
+	Simplify<AntiHeroSliceFullPrimary>,
+	never
+>;
+
+/**
  * Slice variation for *AntiHero*
  */
-type AntiHeroSliceVariation = AntiHeroSliceDefault;
+type AntiHeroSliceVariation = AntiHeroSliceDefault | AntiHeroSliceFull;
 
 /**
  * AntiHero Shared Slice
@@ -772,8 +880,10 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			AntiHeroSlice,
 			AntiHeroSliceDefaultPrimary,
+			AntiHeroSliceFullPrimary,
 			AntiHeroSliceVariation,
 			AntiHeroSliceDefault,
+			AntiHeroSliceFull,
 			CardSlice,
 			CardSliceDefaultPrimary,
 			CardSliceImageLeftPrimary,

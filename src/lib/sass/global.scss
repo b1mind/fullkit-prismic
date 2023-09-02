@@ -1,27 +1,37 @@
 :root {
 	//Colors
 
+	//paragraph/fonts
+	--fs-1: 0.5rem;
+	--fs-2: 0.75rem;
+	--fs-5: 1rem;
+	--fs-6: 1.25rem;
+	--fs-7: 1.5rem;
+	--fs-8: 2rem;
+	--fs-9: 2.2rem;
+
+	//spacings
+
+	//tokens
+	--primary-clr: ;
+	--primary-bg: ;
+	--secondary-clr: ;
+	--secondary-bg: black;
+	--highlight-clr: ;
+	--highlight-bg: ;
+	--shadow: ;
+
+	//todo make variable fonts
 	//Headings/Titles
 	--title-lg: 2.35rem;
 	--title-md: 1.75rem;
 	--title-sm: 1.3rem;
 	--title-xs: 0.85rem;
 
-	//paragraph/fonts
-	--text-lg: 2rem;
-	--text-med: 1.25rem;
-	--text-sm: 1rem;
-	--text-xs: 0.75rem;
-
-	//tokens
-	--text-size: var(--text-sm, 1rem);
-	--primary-clr: ;
-	--primary-bg: ;
-	--secondary-clr: ;
-	--secondary-bg: ;
-	--highlight-clr: ;
-	--highlight-bg: ;
-	--shadow: ;
+	--text-lg: var(--fs-8);
+	--text-med: var(--fs-6);
+	--text-sm: var(--fs-5);
+	--text-xs: var(--fs-2);
 }
 
 * {
@@ -44,14 +54,23 @@ body {
 	min-height: 100svh;
 	display: grid;
 	grid-template-columns:
+		[full-start]
 		minmax(1rem, 1fr)
-		minmax(0, 900px)
-		minmax(1rem, 1fr);
+		[content-start] minmax(0, 900px) [content-end]
+		minmax(1rem, 1fr)
+		[full-end];
 	grid-template-rows: auto 1fr auto;
-	grid-template-areas: '. content .';
+}
+
+.wrap-full,
+[data-slice-variation='full'] {
+	grid-column: full;
+	display: grid;
+	grid-template-columns: inherit;
 }
 
 .container {
+	grid-column: content;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
@@ -59,7 +78,7 @@ body {
 img {
 	display: block;
 	max-width: 100%;
-	height: 100%;
+	// height: 100%;
 	object-fit: cover;
 }
 

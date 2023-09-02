@@ -73,10 +73,12 @@
 	}
 
 	main {
-		grid-column: content;
+		grid-column: full;
 		margin-top: 3rem;
 		display: grid;
-		gap: 12rem;
+		grid-template-columns: inherit;
+
+		row-gap: var(--spacer-lg, 10rem);
 	}
 
 	footer {
