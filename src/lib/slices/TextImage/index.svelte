@@ -5,12 +5,8 @@
 	$$restProps;
 </script>
 
-<section
-	class="container"
-	data-slice-type={slice.slice_type}
-	data-slice-variation={slice.variation}
->
-	<figure class="grid" class:alt={slice.variation === 'imageLeft'}>
+<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+	<figure>
 		<figcaption>
 			<PrismicRichText field={slice.primary.text} />
 		</figcaption>
@@ -21,36 +17,52 @@
 </section>
 
 <style lang="scss">
+	section {
+		grid-column: content;
+	}
+
 	figure {
 		margin: 0;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-areas: 'content img';
+		grid-template-areas: 'text img';
 		gap: 1rem;
 
 		@media (max-width: 600px) {
 			grid-template-columns: 1fr;
 			grid-template-areas:
-				'content'
+				'text'
 				'img';
 		}
 	}
 
-	figcaption {
-		grid-area: content;
-	}
-
 	.img {
+		grid-area: img;
 		border-radius: 10px;
 		overflow: hidden;
 	}
 
-	.alt {
-		grid-template-areas: 'img content';
-		@media (max-width: 600px) {
-			grid-template-areas:
-				'img'
-				'content';
+	// insensitive case support ok but syntax is borked
+	[data-slice-variation*='imageLeft' i] {
+		figure {
+			grid-template-areas: 'img text';
+			@media (max-width: 600px) {
+				grid-template-areas:
+					'img'
+					'text';
+			}
+		}
+	}
+
+	//todo decide how to do multiple full variants...
+	//give all letter id before pFull pFullImageLeft pImageLeft then always uppercase?
+	[data-slice-variation*='full'] {
+		//have to override section
+		grid-column: full;
+		background-color: var(--secondary-bg-light, grey);
+
+		& > * {
+			grid-column: content;
 		}
 	}
 </style>
