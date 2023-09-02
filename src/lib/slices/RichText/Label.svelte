@@ -8,3 +8,9 @@
 {:else}
 	<span class={node.data.label}><slot /></span>
 {/if}
+
+<style>
+	.text-lg {
+		font-size: var(--text-lg, 2.25rem);
+	}
+</style>

@@ -2,7 +2,7 @@
 	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
 	/** @type {import("@prismicio/client").Content.CardSlice} */
 	export let slice;
-	console.log(slice.primary.image);
+	$$restProps;
 </script>
 
 <section
