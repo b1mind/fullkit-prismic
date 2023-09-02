@@ -1,5 +1,5 @@
 :root {
-	//Colors
+	//colors
 
 	//paragraph/fonts
 	--fs-1: 0.5rem;
@@ -12,16 +12,22 @@
 
 	//spacings
 
-	//tokens
+	//> tokens
+	--content-max: 920px;
+	--content-min: 280px;
+
 	--primary-clr: ;
 	--primary-bg: ;
 	--secondary-clr: ;
 	--secondary-bg: black;
 	--highlight-clr: ;
 	--highlight-bg: ;
-	--shadow: ;
 
-	//todo make variable fonts
+	--shadow-cat: ;
+	--shadow-box: ;
+	--shadow-text: ;
+
+	//todo make variable large fonts
 	//Headings/Titles
 	--title-lg: 2.35rem;
 	--title-md: 1.75rem;
@@ -32,6 +38,19 @@
 	--text-med: var(--fs-6);
 	--text-sm: var(--fs-5);
 	--text-xs: var(--fs-2);
+
+	--spacer-lg: 10rem;
+	--spacer-md: ;
+	--spacer-sm: ;
+
+	--gap-lg: ;
+	--gap-md: ;
+	--gap-sm: ;
+
+	--radius-img: ;
+	--radius-btn: ;
+	--radius-outer: ;
+	--radius-inner: ;
 }
 
 * {
@@ -56,20 +75,23 @@ body {
 	grid-template-columns:
 		[full-start]
 		minmax(1rem, 1fr)
-		[content-start] minmax(0, 900px) [content-end]
+		[content-start]
+		minmax(0, var(--content-max))
+		[content-end]
 		minmax(1rem, 1fr)
 		[full-end];
 	grid-template-rows: auto 1fr auto;
 }
 
 .wrap-full,
-[data-slice-variation='full'] {
+[data-slice-variation*='full'] {
 	grid-column: full;
 	display: grid;
 	grid-template-columns: inherit;
 }
 
 .container {
+	//todo refactor containers to use wrapper
 	grid-column: content;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -95,3 +117,15 @@ a {
 [aria-current='page'] {
 	border-bottom: 3px solid white;
 }
+
+p {
+	margin: 0;
+}
+
+p + p {
+	margin-block-start: 0.35rem;
+}
+
+// .spacer > * + * {
+// 	margin-block-start: 10rem;
+// }

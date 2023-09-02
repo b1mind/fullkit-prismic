@@ -41,7 +41,7 @@
 		</nav>
 	</header>
 
-	<main>
+	<main class="wrap-full spacer">
 		<slot />
 	</main>
 
@@ -73,11 +73,8 @@
 	}
 
 	main {
-		grid-column: full;
 		margin-top: 3rem;
-		display: grid;
-		grid-template-columns: inherit;
-
+		//todo spacer figure out where...
 		row-gap: var(--spacer-lg, 10rem);
 	}
 

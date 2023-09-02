@@ -17,13 +17,13 @@
 			"image": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-					"width": 4000,
-					"height": 4000
+					"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+					"width": 4076,
+					"height": 2712
 				},
-				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-				"width": 4000,
-				"height": 4000,
+				"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?rect=0%2C0%2C4076%2C2711&w=920&h=612",
+				"width": 920,
+				"height": 612,
 				"edit": {
 					"zoom": 1,
 					"crop": {
@@ -55,10 +55,8 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Make faster websites faster?",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Strength"
+						}
 					}
 				]
 			},
@@ -86,7 +84,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Slide"
+							"text": "Therefore"
 						}
 					}
 				]

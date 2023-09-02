@@ -750,9 +750,89 @@ export type CardSliceImageLeft = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextImage → Primary*
+ */
+export interface CardSliceFullPrimary {
+	/**
+	 * text field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * image field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * full variation for TextImage Slice
+ *
+ * - **API ID**: `full`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSliceFull = prismic.SharedSliceVariation<
+	'full',
+	Simplify<CardSliceFullPrimary>,
+	never
+>;
+
+/**
+ * Primary content in *TextImage → Primary*
+ */
+export interface CardSliceFullImageLeftPrimary {
+	/**
+	 * text field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * image field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * full Image Left variation for TextImage Slice
+ *
+ * - **API ID**: `fullImageLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSliceFullImageLeft = prismic.SharedSliceVariation<
+	'fullImageLeft',
+	Simplify<CardSliceFullImageLeftPrimary>,
+	never
+>;
+
+/**
  * Slice variation for *TextImage*
  */
-type CardSliceVariation = CardSliceDefault | CardSliceImageLeft;
+type CardSliceVariation =
+	| CardSliceDefault
+	| CardSliceImageLeft
+	| CardSliceFull
+	| CardSliceFullImageLeft;
 
 /**
  * TextImage Shared Slice
@@ -887,9 +967,13 @@ declare module '@prismicio/client' {
 			CardSlice,
 			CardSliceDefaultPrimary,
 			CardSliceImageLeftPrimary,
+			CardSliceFullPrimary,
+			CardSliceFullImageLeftPrimary,
 			CardSliceVariation,
 			CardSliceDefault,
 			CardSliceImageLeft,
+			CardSliceFull,
+			CardSliceFullImageLeft,
 			MarkDownSlice,
 			MarkDownSliceDefaultPrimary,
 			MarkDownSliceVariation,

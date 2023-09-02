@@ -18,7 +18,10 @@
             "label": "heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading1,heading2,heading3",
+            "labels": [
+              "title-lg"
+            ]
           }
         },
         "text": {
@@ -59,7 +62,9 @@
           "type": "Image",
           "config": {
             "label": "image",
-            "constraint": {},
+            "constraint": {
+              "width": 920
+            },
             "thumbnails": []
           }
         }
@@ -80,7 +85,7 @@
             "label": "heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading1,heading2,heading3"
           }
         },
         "text": {
