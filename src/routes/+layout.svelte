@@ -28,9 +28,8 @@
 
 <div class="wrapper">
 	<header>
-		<b>
-			{settings.data.siteName}
-		</b>
+		<a href="/" class="logo">{settings.data.siteName}</a>
+
 		<nav>
 			{#each navigation.data.nav as nav}
 				{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
@@ -52,14 +51,7 @@
 	</footer>
 </div>
 
-<style>
-	main {
-		grid-column: content;
-		margin-top: 3rem;
-		display: grid;
-		gap: 12rem;
-	}
-
+<style lang="scss">
 	header {
 		grid-column: content;
 		padding-block: 1rem;
@@ -69,11 +61,22 @@
 		font-size: 1.25rem;
 	}
 
+	.logo {
+		color: white;
+	}
+
 	nav {
 		display: grid;
 		grid-auto-flow: column;
 		align-items: center;
 		gap: 1rem;
+	}
+
+	main {
+		grid-column: content;
+		margin-top: 3rem;
+		display: grid;
+		gap: 12rem;
 	}
 
 	footer {
