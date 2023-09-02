@@ -1,7 +1,7 @@
 <script>
-	import './global.scss';
+	import '$lib/sass/global.scss';
 	import { page } from '$app/stores';
-	import { PrismicLink, PrismicText } from '@prismicio/svelte';
+	import { PrismicLink } from '@prismicio/svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;

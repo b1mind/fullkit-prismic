@@ -3,6 +3,7 @@
 
 	/** @type {import("@prismicio/client").RTLinkNode} */
 	export let node;
+	$$restProps;
 </script>
 
 <PrismicLink field={node.data} class="underline decoration-1 underline-offset-2">
