@@ -35,6 +35,82 @@ export type FooterDocument<Lang extends string = string> = prismic.PrismicDocume
 	Lang
 >;
 
+type HomePageDocumentDataSlicesSlice = AntiHeroSlice | CardSlice;
+
+/**
+ * Content for Home Page documents
+ */
+interface HomePageDocumentData {
+	/**
+	 * title field in *Home Page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_page.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Slice Zone field in *Home Page*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_page.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice>
+	/**
+	 * Meta Description field in *Home Page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: home_page.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Home Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_page.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+
+	/**
+	 * Meta Title field in *Home Page*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: home_page.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Home Page document from Prismic
+ *
+ * - **API ID**: `home_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomePageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<HomePageDocumentData>,
+	'home_page',
+	Lang
+>;
+
 /**
  * Item in *Navigation → nav*
  */
@@ -419,12 +495,75 @@ export type SlicePageDocument<Lang extends string = string> = prismic.PrismicDoc
 
 export type AllDocumentTypes =
 	| FooterDocument
+	| HomePageDocument
 	| NavigationDocument
 	| PageDocument
 	| SettingsDocument
 	| SliceHomeDocument
 	| SliceNavDocument
 	| SlicePageDocument;
+
+/**
+ * Primary content in *AntiHero → Primary*
+ */
+export interface AntiHeroSliceDefaultPrimary {
+	/**
+	 * heading field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+
+	/**
+	 * text field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * image field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: anti_hero.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for AntiHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AntiHeroSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<AntiHeroSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *AntiHero*
+ */
+type AntiHeroSliceVariation = AntiHeroSliceDefault;
+
+/**
+ * AntiHero Shared Slice
+ *
+ * - **API ID**: `anti_hero`
+ * - **Description**: AntiHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AntiHeroSlice = prismic.SharedSlice<'anti_hero', AntiHeroSliceVariation>;
 
 /**
  * Primary content in *TextImage → Primary*
@@ -517,6 +656,48 @@ type CardSliceVariation = CardSliceDefault | CardSliceImageLeft;
 export type CardSlice = prismic.SharedSlice<'card', CardSliceVariation>;
 
 /**
+ * Primary content in *MarkDown → Primary*
+ */
+export interface MarkDownSliceDefaultPrimary {
+	/**
+	 * content field in *MarkDown → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mark_down.primary.content
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for MarkDown Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarkDownSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MarkDownSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *MarkDown*
+ */
+type MarkDownSliceVariation = MarkDownSliceDefault;
+
+/**
+ * MarkDown Shared Slice
+ *
+ * - **API ID**: `mark_down`
+ * - **Description**: MarkDown
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarkDownSlice = prismic.SharedSlice<'mark_down', MarkDownSliceVariation>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -570,6 +751,9 @@ declare module '@prismicio/client' {
 		export type {
 			FooterDocument,
 			FooterDocumentData,
+			HomePageDocument,
+			HomePageDocumentData,
+			HomePageDocumentDataSlicesSlice,
 			NavigationDocument,
 			NavigationDocumentData,
 			PageDocument,
@@ -586,12 +770,20 @@ declare module '@prismicio/client' {
 			SlicePageDocumentData,
 			SlicePageDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			AntiHeroSlice,
+			AntiHeroSliceDefaultPrimary,
+			AntiHeroSliceVariation,
+			AntiHeroSliceDefault,
 			CardSlice,
 			CardSliceDefaultPrimary,
 			CardSliceImageLeftPrimary,
 			CardSliceVariation,
 			CardSliceDefault,
 			CardSliceImageLeft,
+			MarkDownSlice,
+			MarkDownSliceDefaultPrimary,
+			MarkDownSliceVariation,
+			MarkDownSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

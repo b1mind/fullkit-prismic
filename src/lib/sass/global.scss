@@ -2,12 +2,26 @@
 	//Colors
 
 	//Headings/Titles
-	--title-sm: 0.75rem;
-	--title-md: 1.75rem;
 	--title-lg: 2.35rem;
+	--title-md: 1.75rem;
+	--title-sm: 1.3rem;
+	--title-xs: 0.85rem;
 
 	//paragraph/fonts
 	--text-lg: 2rem;
+	--text-med: 1.25rem;
+	--text-sm: 1rem;
+	--text-xs: 0.75rem;
+
+	//tokens
+	--text-size: var(--text-sm, 1rem);
+	--primary-clr: ;
+	--primary-bg: ;
+	--secondary-clr: ;
+	--secondary-bg: ;
+	--highlight-clr: ;
+	--highlight-bg: ;
+	--shadow: ;
 }
 
 * {
