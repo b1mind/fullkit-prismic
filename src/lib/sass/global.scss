@@ -16,6 +16,7 @@
 	//note bounding tokens should be in REM
 	--content-max: 920px;
 	--content-min: 280px;
+	--content-padding: var(--gap-sm);
 	--section-max: ;
 	--section-min: ;
 
@@ -52,6 +53,7 @@
 	--gap-lg: ;
 	--gap-md: ;
 	--gap-sm: 16px;
+	--gap-xs: 8px;
 
 	--border-sm: 2px;
 	--border-md: 4px;

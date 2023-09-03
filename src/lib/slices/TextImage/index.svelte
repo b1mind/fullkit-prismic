@@ -37,6 +37,10 @@
 		}
 	}
 
+	figcaption {
+		padding: var(--content-padding);
+	}
+
 	.img {
 		grid-area: img;
 		border-radius: 10px;

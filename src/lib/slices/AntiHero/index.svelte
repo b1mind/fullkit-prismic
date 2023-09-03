@@ -60,6 +60,10 @@
 		min-height: 400px;
 	}
 
+	header {
+		padding: var(--content-padding);
+	}
+
 	.img {
 		max-height: 720px;
 		position: relative;
@@ -73,10 +77,9 @@
 		}
 	}
 
-	//todo make full screen background or use img
+	//todo put text-shadow on children richText remove parents
 	.layer {
 		grid-column: content;
-		padding: var(--gap-xs);
 		display: grid;
 		grid-template-areas: 'l';
 		place-items: center;
@@ -92,10 +95,6 @@
 	[data-slice-variation='default'] {
 		grid-column: content;
 		padding-block: var(--spacer-lg);
-
-		header {
-			padding: var(--spacer-sm);
-		}
 
 		.img {
 			border-radius: var(--round-out, 10px);

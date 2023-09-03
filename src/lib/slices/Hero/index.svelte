@@ -39,17 +39,23 @@
 		min-height: 400px;
 		max-height: 720px;
 	}
+
 	.img {
 		max-height: 720px;
 		position: relative;
 		isolation: isolate;
 		overflow: hidden;
+
 		&::after {
 			content: '';
 			position: absolute;
 			inset: 0;
 			background-color: hsl(0 0% 0% / 0.55);
 		}
+	}
+
+	header {
+		padding: var(--gap-xs);
 	}
 
 	//todo make full screen background or use img
