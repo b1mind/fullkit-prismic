@@ -19,7 +19,7 @@
 	--section-max: ;
 	--section-min: ;
 
-	--primary-clr: ;
+	--primary-clr: blueviolet;
 	--primary-bg: #1b1b1b;
 	--secondary-clr: ;
 	--secondary-bg: black;
@@ -53,8 +53,11 @@
 	--gap-md: ;
 	--gap-sm: 16px;
 
-	--radius-img: ;
-	--radius-btn: ;
+	--border-sm: 2px;
+	--border-md: 4px;
+
+	--radius-img: 10px;
+	--radius-btn: 5px;
 	--radius-outer: ;
 	--radius-inner: ;
 }
@@ -80,9 +83,9 @@ body {
 }
 
 img {
-	display: block;
 	max-width: 100%;
 	// height: 100%;
+	display: block;
 	object-fit: cover;
 }
 
@@ -161,4 +164,30 @@ p + p {
 .container {
 	//todo refactor containers to use wrapper
 	grid-column: content;
+}
+
+.btn {
+	max-width: max-content;
+	margin-block: 1rem;
+	padding: 0.2em 0.85em;
+	display: inline-grid;
+	place-items: center;
+	color: var(--white, white);
+	text-transform: capitalize;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&-primary {
+		@extend .btn;
+		border-radius: var(--radius-btn);
+		background-color: var(--primary-clr, blueviolet);
+	}
+
+	&-secondary {
+		@extend .btn;
+		border: var(--border-sm, 2px) solid var(--primary-clr);
+		border-radius: var(--radius-btn);
+	}
 }
