@@ -22,10 +22,10 @@
 <style lang="scss">
 	nav {
 		padding-block-end: var(--spacer-xs, 10px);
-		display: grid;
-		grid-auto-flow: column;
+		display: flex;
+		flex-wrap: wrap;
 		justify-content: end;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.5rem 1rem;
 	}
 </style>
