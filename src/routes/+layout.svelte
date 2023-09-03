@@ -66,14 +66,18 @@
 
 		& > div {
 			grid-column: content;
-			display: grid;
-			grid-auto-flow: column;
+			display: flex;
+			flex-wrap: wrap;
+			// grid-auto-flow: column;
 			justify-content: space-between;
 			align-items: center;
 		}
 	}
 
 	.logo {
+		display: block;
+		//hacks need to refactor header (component?)
+		margin-block-end: 0.4rem;
 		color: white;
 	}
 
