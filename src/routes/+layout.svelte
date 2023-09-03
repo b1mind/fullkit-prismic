@@ -72,11 +72,11 @@
 		gap: 1rem;
 	}
 
-	main {
-		margin-top: 3rem;
-		//todo spacer figure out where...
-		row-gap: var(--spacer-lg, 10rem);
-	}
+	// main {
+	// 	margin-top: 3rem;
+	// 	//todo spacer figure out where...
+	// 	row-gap: var(--spacer-lg, 10rem);
+	// }
 
 	footer {
 		grid-column: content;

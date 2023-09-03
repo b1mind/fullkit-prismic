@@ -44,6 +44,10 @@
 </section>
 
 <style lang="scss">
+	section {
+		min-height: 400px;
+	}
+
 	.img {
 		max-height: 720px;
 		position: relative;
@@ -74,6 +78,12 @@
 
 	[data-slice-variation='default'] {
 		grid-column: content;
+		padding-block: var(--spacer-lg);
+
+		header {
+			padding: var(--spacer-sm);
+		}
+
 		.img {
 			border-radius: var(--round-out, 10px);
 		}

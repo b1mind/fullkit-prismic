@@ -40,8 +40,8 @@
 	--text-xs: var(--fs-2);
 
 	--spacer-lg: 10rem;
-	--spacer-md: ;
-	--spacer-sm: ;
+	--spacer-md: 5rem;
+	--spacer-sm: 2.5rem;
 
 	--gap-lg: ;
 	--gap-md: ;
@@ -53,6 +53,7 @@
 	--radius-inner: ;
 }
 
+//> defaults
 * {
 	box-sizing: border-box;
 }
@@ -68,7 +69,6 @@ body {
 	background-color: #1b1b1b;
 }
 
-//> defaults
 img {
 	display: block;
 	max-width: 100%;

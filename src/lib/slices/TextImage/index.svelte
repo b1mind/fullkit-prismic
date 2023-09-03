@@ -59,6 +59,7 @@
 	[data-slice-variation*='Full'] {
 		//have to override section
 		grid-column: full;
+		padding-block: var(--spacer-lg);
 		background-color: var(--secondary-bg-light, grey);
 
 		& > * {
