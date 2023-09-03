@@ -1,135 +1,149 @@
 {
-	"id": "anti_hero",
-	"type": "SharedSlice",
-	"name": "AntiHero",
-	"description": "AntiHero",
-	"variations": [
-		{
-			"id": "default",
-			"name": "Default",
-			"docURL": "...",
-			"version": "initial",
-			"description": "Default",
-			"imageUrl": "",
-			"primary": {
-				"heading": {
-					"type": "StructuredText",
-					"config": {
-						"label": "heading(optional)",
-						"placeholder": "h2 or label",
-						"allowTargetBlank": true,
-						"single": "paragraph,heading2",
-						"labels": ["title-lg"]
-					}
-				},
-				"text": {
-					"type": "StructuredText",
-					"config": {
-						"label": "text",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "strong"
-					}
-				},
-				"text2": {
-					"type": "StructuredText",
-					"config": {
-						"label": "text2",
-						"placeholder": "optional",
-						"allowTargetBlank": true,
-						"single": "strong"
-					}
-				},
-				"button": {
-					"type": "Link",
-					"config": {
-						"label": "button",
-						"placeholder": "optional",
-						"allowTargetBlank": false,
-						"select": null
-					}
-				},
-				"button_text": {
-					"type": "Text",
-					"config": {
-						"label": "button text",
-						"placeholder": "optional"
-					}
-				},
-				"image": {
-					"type": "Image",
-					"config": {
-						"label": "image (optional)",
-						"constraint": {
-							"width": 920
-						},
-						"thumbnails": []
-					}
-				}
-			},
-			"items": {}
-		},
-		{
-			"id": "pFull",
-			"name": "Full Width",
-			"docURL": "...",
-			"version": "initial",
-			"description": "Default",
-			"imageUrl": "",
-			"primary": {
-				"heading": {
-					"type": "StructuredText",
-					"config": {
-						"label": "heading(optional)",
-						"placeholder": "h2 or label",
-						"allowTargetBlank": true,
-						"single": "paragraph,heading2",
-						"labels": ["title-xl", "title-lg", "title-md", "title-sml"]
-					}
-				},
-				"text": {
-					"type": "StructuredText",
-					"config": {
-						"label": "text",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "strong"
-					}
-				},
-				"text2": {
-					"type": "StructuredText",
-					"config": {
-						"label": "text2",
-						"placeholder": "",
-						"allowTargetBlank": true,
-						"single": "strong"
-					}
-				},
-				"button": {
-					"type": "Link",
-					"config": {
-						"label": "button",
-						"placeholder": "",
-						"select": null
-					}
-				},
-				"button_text": {
-					"type": "Text",
-					"config": {
-						"label": "button text",
-						"placeholder": ""
-					}
-				},
-				"image": {
-					"type": "Image",
-					"config": {
-						"label": "image(optional)",
-						"constraint": {},
-						"thumbnails": []
-					}
-				}
-			},
-			"items": {}
-		}
-	]
+  "id": "anti_hero",
+  "type": "SharedSlice",
+  "name": "AntiHero",
+  "description": "AntiHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading(optional)",
+            "placeholder": "h2 or label",
+            "allowTargetBlank": true,
+            "single": "heading2,strong",
+            "labels": [
+              "title-lg"
+            ]
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "text2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text2",
+            "placeholder": "optional",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "optional",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button text",
+            "placeholder": "optional"
+          }
+        },
+        "button_type": {
+          "type": "Text",
+          "config": {
+            "label": "button type",
+            "placeholder": "optional"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image (optional)",
+            "constraint": {
+              "width": 920
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "pFull",
+      "name": "Full Width",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading(optional)",
+            "placeholder": "h2 or label",
+            "allowTargetBlank": true,
+            "single": "heading2,strong",
+            "labels": [
+              "title-xl",
+              "title-lg",
+              "title-md",
+              "title-sml"
+            ]
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "text2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button text",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image(optional)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
 }

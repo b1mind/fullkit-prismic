@@ -37,7 +37,19 @@
 			{/if}
 
 			{#if prismic.isFilled.link(slice.primary.button)}
-				<PrismicLink field={slice.primary.button}>{slice.primary.button_text}</PrismicLink>
+				{#if slice.primary.button_type === 'primary'}
+					<PrismicLink class="btn-primary" field={slice.primary.button}>
+						{slice.primary.button_text}
+					</PrismicLink>
+				{:else if slice.primary.button_type === 'secondary'}
+					<PrismicLink class="btn-secondary" field={slice.primary.button}>
+						{slice.primary.button_text}
+					</PrismicLink>
+				{:else}
+					<PrismicLink field={slice.primary.button}>
+						{slice.primary.button_text}
+					</PrismicLink>
+				{/if}
 			{/if}
 		</header>
 	</div>
@@ -64,6 +76,7 @@
 	//todo make full screen background or use img
 	.layer {
 		grid-column: content;
+		padding: var(--gap-xs);
 		display: grid;
 		grid-template-areas: 'l';
 		place-items: center;

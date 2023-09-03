@@ -573,6 +573,16 @@ export interface AntiHeroSliceDefaultPrimary {
 	button_text: prismic.KeyTextField;
 
 	/**
+	 * button type field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: anti_hero.primary.button_type
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_type: prismic.KeyTextField;
+
+	/**
 	 * image (optional) field in *AntiHero → Primary*
 	 *
 	 * - **Field Type**: Image
