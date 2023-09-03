@@ -10,9 +10,9 @@ Todo:
     ☐ 2 col text with middle cutter border
     
   ✔ links from getAll 'SlicePage' @done
-  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
+  ✔ away to do tokens via slices (text field "button style?" A: content relation select field) @done
   ☐ make button component for single/pair | finish styling
-  ☐ away to do tokens via slices (text field "button style?" then if matchs it styles)
+  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
   ☐ explain what the site is about (showing off slices/Prismic)
   ☐ snag a design + colors from some place just to jaz this demo up
   ☐ finish css props and tokens + implement rest
@@ -21,7 +21,7 @@ Learn:
   ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
   ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
     ☐ repeatable fields
-    ☐ relationships
+    ✔ content relationship fields @started(23-09-03 15:33) @done @lasted(1m1s)
 
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
