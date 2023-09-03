@@ -6,7 +6,6 @@ export const prerender = true;
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-	console.log(params);
 	const client = createClient();
 
 	const page = await client.getByUID('slicePage', params.uid);

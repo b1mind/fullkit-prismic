@@ -34,6 +34,11 @@
 </section>
 
 <style lang="scss">
+	//todo need to convert to rems? and make tokens
+	section {
+		min-height: 400px;
+		max-height: 720px;
+	}
 	.img {
 		max-height: 720px;
 		position: relative;

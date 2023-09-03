@@ -7,8 +7,4 @@
 	export let data;
 </script>
 
-<div>
-	<PrismicRichText field={data.page.data.title} />
-</div>
-
 <SliceZone slices={data.page.data.slices} {components} />

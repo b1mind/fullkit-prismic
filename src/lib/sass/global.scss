@@ -13,8 +13,11 @@
 	//spacings
 
 	//> tokens
+	//note bounding tokens should be in REM
 	--content-max: 920px;
 	--content-min: 280px;
+	--section-max: ;
+	--section-min: ;
 
 	--primary-clr: ;
 	--primary-bg: ;
@@ -39,9 +42,12 @@
 	--text-sm: var(--fs-5);
 	--text-xs: var(--fs-2);
 
+	//note spacer and gap values should be hard coded? (not REM)
+	--spacer-xl: 2.5rem;
 	--spacer-lg: 10rem;
 	--spacer-md: 5rem;
-	--spacer-sm: 2.5rem;
+	--spacer-sm: 25px;
+	--spacer-xs: 10px;
 
 	--gap-lg: ;
 	--gap-md: ;
@@ -66,6 +72,8 @@ body {
 body {
 	margin: 0;
 	color: whitesmoke;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	background-color: #1b1b1b;
 }
 
@@ -79,15 +87,26 @@ img {
 a {
 	color: blueviolet;
 	text-decoration: none;
-	border-bottom: 3px solid transparent;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
-:not([aria-current='page'])nav a:hover {
-	border-bottom: 3px solid white;
+//safety border
+//need to make a token for borders
+nav a {
+	padding-block-end: 0.25rem;
+	border-bottom: 0.15em solid transparent;
 }
 
-[aria-current='page'] {
-	border-bottom: 3px solid white;
+:not([aria-current='page']) nav a:hover {
+	text-decoration: none;
+	border-bottom: 0.15em solid white;
+}
+
+nav a[aria-current='page'] {
+	border-bottom: 0.15em solid white;
 }
 
 p {
@@ -125,9 +144,13 @@ p + p {
 	grid-template-columns: inherit;
 }
 
+.wrap-content {
+	grid-column: content;
+	// display: grid;
+	// grid-template-columns: inherit;
+}
+
 .container {
 	//todo refactor containers to use wrapper
 	grid-column: content;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }

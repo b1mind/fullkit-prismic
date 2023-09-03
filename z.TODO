@@ -3,7 +3,7 @@ Todo:
   ✔ start tokens and data-slice-variation logic @done
   ☐ use Slice Simulator to make more slices and variations
     ✔ Hero (h1 only) / anti-Heros (h2 or Text Only) @done
-    ☐ anti-hero title labels
+    ✔ anti-hero title labels @done
     ☐ TextImage / more variations
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
@@ -17,7 +17,7 @@ Todo:
   ☐ finish css props and tokens + implement rest
 
 Learn: 
-  ☐ learn a middle ground for when to make a new slice vs variation (UX/DX)
+  ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
   ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)

@@ -72,11 +72,9 @@
 		gap: 1rem;
 	}
 
-	// main {
-	// 	margin-top: 3rem;
-	// 	//todo spacer figure out where...
-	// 	row-gap: var(--spacer-lg, 10rem);
-	// }
+	main {
+		grid-template-rows: auto 1fr;
+	}
 
 	footer {
 		grid-column: content;
