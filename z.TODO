@@ -10,7 +10,7 @@ Todo:
     ☐ 2 col text with middle cutter border
     
   ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
-    ☐ links from getAll 'SlicePage'
+    ✔ links from getAll 'SlicePage' @done
     ☐ explain what the page is about (showing off slices)
 
   ☐ snag a design + colors from some place just to jaz this demo up
