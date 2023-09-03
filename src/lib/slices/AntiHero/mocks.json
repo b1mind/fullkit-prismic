@@ -1,6 +1,88 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum ullamco irure reprehenderit elit ipsum est ut duis duis. Ad eiusmod ex laboris laborum tempor eiusmod aute proident voluptate amet officia veniam. Duis ad reprehenderit nisi ut adipisicing magna elit quis nisi voluptate in minim."
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+					"width": 3958,
+					"height": 3958
+				},
+				"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?rect=0%2C0%2C3958%2C3958&w=920&h=920",
+				"width": 920,
+				"height": 920,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "military",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Doing more to help",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"text2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit proident dolor proident ipsum ea ea tempor esse cupidatat labore dolore ut. Officia duis voluptate commodo ea aliqua nostrud."
+						}
+					}
+				]
+			},
+			"button_type": {
+				"__TYPE__": "FieldContent",
+				"value": "primary",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
 		"variation": "pFull",
 		"primary": {
 			"heading": {
@@ -80,87 +162,5 @@
 				"value": []
 			}
 		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cillum ullamco irure reprehenderit elit ipsum est ut duis duis. Ad eiusmod ex laboris laborum tempor eiusmod aute proident voluptate amet officia veniam. Duis ad reprehenderit nisi ut adipisicing magna elit quis nisi voluptate in minim."
-						}
-					}
-				]
-			},
-			"image": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
-					"width": 3958,
-					"height": 3958
-				},
-				"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?rect=0%2C0%2C3958%2C3958&w=920&h=920",
-				"width": 920,
-				"height": 920,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"button": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com"
-				}
-			},
-			"button_text": {
-				"__TYPE__": "FieldContent",
-				"value": "military",
-				"type": "Text"
-			},
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Doing more to help",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"text2": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Velit proident dolor proident ipsum ea ea tempor esse cupidatat labore dolore ut. Officia duis voluptate commodo ea aliqua nostrud."
-						}
-					}
-				]
-			},
-			"button_type": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "primary"
-			}
-		},
-		"items": []
 	}
 ]

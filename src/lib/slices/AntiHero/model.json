@@ -59,10 +59,15 @@
           }
         },
         "button_type": {
-          "type": "Text",
+          "type": "Select",
           "config": {
             "label": "button type",
-            "placeholder": "optional"
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ],
+            "default_value": "primary"
           }
         },
         "image": {
