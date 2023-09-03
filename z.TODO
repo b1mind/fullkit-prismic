@@ -9,24 +9,40 @@ Todo:
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
     
-  ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
-    ✔ links from getAll 'SlicePage' @done
-    ☐ explain what the page is about (showing off slices)
-
+  ✔ links from getAll 'SlicePage' @done
+  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
+  ☐ make button component for single/pair | finish styling
+  ☐ away to do tokens via slices (text field "button style?" then if matchs it styles)
+  ☐ explain what the site is about (showing off slices/Prismic)
   ☐ snag a design + colors from some place just to jaz this demo up
   ☐ finish css props and tokens + implement rest
 
 Learn: 
   ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
   ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
+    ☐ repeatable fields
+    ☐ relationships
+
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
 WishList:
+  ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
   ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
   ☐ convert this to a template we can npx into a new Prismic repo/site
 
 Debt:
+  ☐ fix header and footer to be full > content
   ☐ learn how to use jsDocs and properly fix @ type any
   ☐ fix $$restProps on components/slices (is there another way?)
+  
+//notes for Prismic team
+  Minimal Kit starter home page links to NextJS docs
+
+  Full Kit Demo the TextWithImage component missing conditional for Button
+  https://github.com/b1mind/b1mind-prismic/blob/dfce3e0615e4973cf065aeeebf78aeeddd88e0d1/src/lib/slices/TextWithImage/index.svelte#L16C4-L16C4
+  
+  Away to make variations uid accept snake/kabob (camelCaseOnly?)
+
+  Slice Simulator seems to not always work, need to test more. (can raise issues in repo)
