@@ -27,38 +27,49 @@
 </svelte:head>
 
 <div class="wrapper">
-	<header>
-		<a href="/" class="logo">{settings.data.siteName}</a>
+	<header class="wrap-pop">
+		<div>
+			<b><a href="/" class="logo">{settings.data.siteName}</a></b>
 
-		<nav>
-			{#each navigation.data.nav as nav}
-				{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
+			<nav>
+				{#each navigation.data.nav as nav}
+					{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
 
-				<PrismicLink aria-current={currentUrl} field={nav.link}>
-					{nav.label}
-				</PrismicLink>
-			{/each}
-		</nav>
+					<PrismicLink aria-current={currentUrl} field={nav.link}>
+						{nav.label}
+					</PrismicLink>
+				{/each}
+			</nav>
+		</div>
 	</header>
 
 	<main class="wrap-full spacer">
 		<slot />
 	</main>
 
-	<footer>
-		<b> {settings.data.siteName} &#169; copyright {date}</b>
-		<PrismicLink field={footer.data.policy}>Privacy Policy</PrismicLink>
+	<footer class="wrap-pop">
+		<div>
+			{settings.data.siteName} &#169; copyright {date}
+			<PrismicLink field={footer.data.policy}>Privacy Policy</PrismicLink>
+		</div>
 	</footer>
 </div>
 
 <style lang="scss">
 	header {
-		grid-column: content;
-		padding-block: 1rem;
-		display: grid;
-		grid-auto-flow: column;
-		justify-content: space-between;
 		font-size: 1.25rem;
+	}
+
+	header,
+	footer {
+		padding-block: 1rem;
+
+		& > div {
+			grid-column: content;
+			display: grid;
+			grid-auto-flow: column;
+			justify-content: space-between;
+		}
 	}
 
 	.logo {
@@ -74,13 +85,5 @@
 
 	main {
 		grid-template-rows: auto 1fr;
-	}
-
-	footer {
-		grid-column: content;
-		padding-block: 1rem;
-		display: grid;
-		grid-auto-flow: column;
-		justify-content: space-between;
 	}
 </style>

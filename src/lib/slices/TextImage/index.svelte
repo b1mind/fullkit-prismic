@@ -29,6 +29,7 @@
 		gap: 1rem;
 
 		@media (max-width: 600px) {
+			grid-column: full;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				'text'
@@ -47,6 +48,7 @@
 		figure {
 			grid-template-areas: 'img text';
 			@media (max-width: 600px) {
+				grid-column: full;
 				grid-template-areas:
 					'img'
 					'text';
