@@ -1,17 +1,11 @@
 Todo:
-  ✔ make design system and slice variation choices @done
-  ✔ start tokens and data-slice-variation logic @done
   ☐ use Slice Simulator to make more slices and variations
-    ✔ Hero (h1 only) / anti-Heros (h2 or Text Only) @done
-    ✔ anti-hero title labels @done
     ☐ TextImage / more variations
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
     
-  ✔ links from getAll 'SlicePage' @done
-  ✔ away to do tokens via slices (text field "button style?" A: content relation select field) @done
-  ☐ make button component for single/pair | finish styling
+  ☐ style buttons and links better
   ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
   ☐ explain what the site is about (showing off slices/Prismic)
   ☐ snag a design + colors from some place just to jaz this demo up
@@ -21,18 +15,17 @@ Learn:
   ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
   ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
     ☐ repeatable fields
-    ✔ content relationship fields @started(23-09-03 15:33) @done @lasted(1m1s)
 
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
-  ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
 WishList:
-  ☐ come up with a better slice page structure (https://prismic.io/docs/content-relationship)
+  ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
-  ☐ Make a serializer for MD RichText but keep options for component (maybe slice variation?)
   ☐ convert this to a template we can npx into a new Prismic repo/site
+  ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
 Debt:
+  ☐ fix content relationship from component / util
   ☐ fix header and footer to be full > content
   ☐ learn how to use jsDocs and properly fix @ type any
   ☐ fix $$restProps on components/slices (is there another way?)
@@ -43,6 +36,17 @@ Debt:
   Full Kit Demo the TextWithImage component missing conditional for Button
   https://github.com/b1mind/b1mind-prismic/blob/dfce3e0615e4973cf065aeeebf78aeeddd88e0d1/src/lib/slices/TextWithImage/index.svelte#L16C4-L16C4
   
+//ask
   Away to make variations uid accept snake/kabob (camelCaseOnly?)
+  better way to load content relationship data (right now checking and fetching on every +page.server or +layout.server)
 
-  Slice Simulator seems to not always work, need to test more. (can raise issues in repo)
+Archive:
+  ✔ make design system and slice variation choices @done @project(Todo)
+  ✔ start tokens and data-slice-variation logic @done @project(Todo)
+  ✔ Hero (h1 only) / anti-Heros (h2 or Text Only) @done @project(Todo)
+  ✔ anti-hero title labels @done @project(Todo)
+  ✔ links from getAll 'SlicePage' @done @project(Todo)
+  ✔ away to do tokens via slices (text field "button style?" A: content relation select field) @done @project(Todo)
+  ✔ make button component for single/pair | finish styling @done @project(Todo)
+  ✔ content relation ships with custom fields  (https://prismic.io/docs/content-relationship) @done @project(Learn)
+  ✘ Make a serializer for MD RichText but keep options for component (maybe slice variation?) @cancelled @project(WishList)
