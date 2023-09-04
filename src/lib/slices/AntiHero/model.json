@@ -139,6 +139,18 @@
             "placeholder": ""
           }
         },
+        "button_type": {
+          "type": "Select",
+          "config": {
+            "label": "button type",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ],
+            "default_value": "primary"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {

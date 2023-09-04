@@ -154,6 +154,11 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"button_type": {
+				"__TYPE__": "FieldContent",
+				"value": "primary",
+				"type": "Select"
 			}
 		},
 		"items": [

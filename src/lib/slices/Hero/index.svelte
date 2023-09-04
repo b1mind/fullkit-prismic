@@ -4,6 +4,7 @@
 	import Label from './Label.svelte';
 
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	/** @type {import("@prismicio/client").Content.AntiHeroSlice} */
 	export let slice;
@@ -26,8 +27,17 @@
 			{#if prismic.isFilled.richText(slice.primary.text2)}
 				<PrismicRichText field={slice.primary.text2} />
 			{/if}
+
 			{#if prismic.isFilled.link(slice.primary.button)}
-				<PrismicLink field={slice.primary.button}>{slice.primary.button_text}</PrismicLink>
+				<Button {slice}>
+					{slice.primary.button_text}
+				</Button>
+			{/if}
+
+			{#if prismic.isFilled.link(slice.primary.button)}
+				<PrismicLink class="btn{`${slice.primary.button_type}`}" field={slice.primary.button}>
+					{slice.primary.button_text}
+				</PrismicLink>
 			{/if}
 		</header>
 	</div>
