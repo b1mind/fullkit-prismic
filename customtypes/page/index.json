@@ -41,6 +41,12 @@
 						},
 						"mark_down": {
 							"type": "SharedSlice"
+						},
+						"testimonials": {
+							"type": "SharedSlice"
+						},
+						"features": {
+							"type": "SharedSlice"
 						}
 					}
 				}

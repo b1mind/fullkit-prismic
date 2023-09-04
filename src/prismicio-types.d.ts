@@ -172,7 +172,9 @@ type PageDocumentDataSlicesSlice =
 	| CardSlice
 	| AntiHeroSlice
 	| HeroSlice
-	| MarkDownSlice;
+	| MarkDownSlice
+	| TestimonialsSlice
+	| FeaturesSlice;
 
 /**
  * Content for Page documents
@@ -668,6 +670,17 @@ export interface AntiHeroSlicePFullPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	button_text: prismic.KeyTextField;
+
+	/**
+	 * button type field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: primary
+	 * - **API ID Path**: anti_hero.primary.button_type
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	button_type: prismic.SelectField<'primary' | 'secondary', 'filled'>;
 
 	/**
 	 * image(optional) field in *AntiHero → Primary*

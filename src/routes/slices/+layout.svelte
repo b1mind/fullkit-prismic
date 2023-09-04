@@ -5,7 +5,6 @@
 
 	export let data;
 	const { sliceNav } = data;
-	console.log($page);
 </script>
 
 <header class="wrap-content">
