@@ -36,9 +36,6 @@
 						"anti_hero": {
 							"type": "SharedSlice"
 						},
-						"hero": {
-							"type": "SharedSlice"
-						},
 						"mark_down": {
 							"type": "SharedSlice"
 						},
@@ -46,6 +43,9 @@
 							"type": "SharedSlice"
 						},
 						"features": {
+							"type": "SharedSlice"
+						},
+						"hero": {
 							"type": "SharedSlice"
 						}
 					}

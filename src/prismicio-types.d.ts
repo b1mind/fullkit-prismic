@@ -171,10 +171,10 @@ type PageDocumentDataSlicesSlice =
 	| RichTextSlice
 	| CardSlice
 	| AntiHeroSlice
-	| HeroSlice
 	| MarkDownSlice
 	| TestimonialsSlice
-	| FeaturesSlice;
+	| FeaturesSlice
+	| HeroSlice;
 
 /**
  * Content for Page documents
@@ -691,6 +691,20 @@ export interface AntiHeroSlicePFullPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * bg color field in *AntiHero → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: primary
+	 * - **API ID Path**: anti_hero.primary.bg_color
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	bg_color: prismic.SelectField<
+		'primary' | 'secondary' | 'primary-alt' | 'secondary-alt',
+		'filled'
+	>;
 }
 
 /**
@@ -1023,6 +1037,17 @@ export interface HeroSliceDefaultPrimary {
 	button_text: prismic.KeyTextField;
 
 	/**
+	 * button type field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: primary
+	 * - **API ID Path**: hero.primary.button_type
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	button_type: prismic.SelectField<'primary' | 'secondary', 'filled'>;
+
+	/**
 	 * image field in *Hero → Primary*
 	 *
 	 * - **Field Type**: Image
@@ -1101,6 +1126,17 @@ export interface HeroSlicePFullPrimary {
 	button_text: prismic.KeyTextField;
 
 	/**
+	 * button type field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: primary
+	 * - **API ID Path**: hero.primary.button_type
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	button_type: prismic.SelectField<'primary' | 'secondary', 'filled'>;
+
+	/**
 	 * image field in *Hero → Primary*
 	 *
 	 * - **Field Type**: Image
@@ -1125,9 +1161,98 @@ export type HeroSlicePFull = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSlicePSplitPrimary {
+	/**
+	 * heading field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: !one per page
+	 * - **API ID Path**: hero.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+
+	/**
+	 * text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * text2 field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * button field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.button
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	button: prismic.LinkField;
+
+	/**
+	 * button text field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	button_text: prismic.KeyTextField;
+
+	/**
+	 * button type field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: primary
+	 * - **API ID Path**: hero.primary.button_type
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	button_type: prismic.SelectField<'primary' | 'secondary', 'filled'>;
+
+	/**
+	 * image field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Split variation for Hero Slice
+ *
+ * - **API ID**: `pSplit`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlicePSplit = prismic.SharedSliceVariation<
+	'pSplit',
+	Simplify<HeroSlicePSplitPrimary>,
+	never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSlicePFull;
+type HeroSliceVariation = HeroSliceDefault | HeroSlicePFull | HeroSlicePSplit;
 
 /**
  * Hero Shared Slice
@@ -1334,9 +1459,11 @@ declare module '@prismicio/client' {
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSlicePFullPrimary,
+			HeroSlicePSplitPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
 			HeroSlicePFull,
+			HeroSlicePSplit,
 			MarkDownSlice,
 			MarkDownSliceDefaultPrimary,
 			MarkDownSliceVariation,
