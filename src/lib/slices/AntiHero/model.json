@@ -158,6 +158,20 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "bg_color": {
+          "type": "Select",
+          "config": {
+            "label": "bg color",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary",
+              "primary-alt",
+              "secondary-alt"
+            ],
+            "default_value": "primary"
+          }
         }
       },
       "items": {}

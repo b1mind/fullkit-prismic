@@ -159,6 +159,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "primary",
 				"type": "Select"
+			},
+			"bg_color": {
+				"__TYPE__": "FieldContent",
+				"value": "primary",
+				"type": "Select"
 			}
 		},
 		"items": [

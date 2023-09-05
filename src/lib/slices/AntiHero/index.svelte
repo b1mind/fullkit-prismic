@@ -11,11 +11,18 @@
 	$$restProps;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+	style="background-color: var(--{slice.primary.bg_color}-bg);"
+>
 	<div class="layer">
 		<div class="img">
 			{#if prismic.isFilled.image(slice.primary.image)}
-				<PrismicImage field={slice.primary.image} />
+				<PrismicImage
+					field={slice.primary.image}
+					aria-hidden={slice.variation === 'pFull' || 'default' ? true : undefined}
+				/>
 			{/if}
 		</div>
 
@@ -88,13 +95,12 @@
 		padding-block: var(--spacer-lg);
 
 		.img {
-			border-radius: var(--round-out, 10px);
+			border-radius: var(--radius-img, 10px);
 		}
 	}
 
 	[data-slice-variation*='Full'] {
 		text-align: center;
-		background-color: var(--secondary-bg);
 		& > * {
 			grid-column: full;
 		}
