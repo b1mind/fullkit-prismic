@@ -29,7 +29,7 @@
 
 	--shadow-cat: ;
 	--shadow-box: ;
-	--shadow-text: ;
+	--shadow-txt: text-shadow: 2px 1px 2px black;
 
 	//todo make variable large fonts
 	//Headings/Titles
@@ -54,6 +54,9 @@
 	--gap-md: ;
 	--gap-sm: 16px;
 	--gap-xs: 8px;
+
+	--pad-block: 0.25em;
+	--pad-inline: 1em;
 
 	--border-sm: 2px;
 	--border-md: 4px;
@@ -92,7 +95,7 @@ img {
 }
 
 a {
-	color: blueviolet;
+	color: var(--primary-clr);
 	text-decoration: none;
 
 	&:hover {
@@ -121,7 +124,7 @@ p {
 }
 
 p + p {
-	margin-block-start: 0.35rem;
+	margin-block-start: 0.4em;
 }
 
 // .spacer > * + * {
@@ -169,9 +172,12 @@ p + p {
 }
 
 .btn {
+	--pad-block: 0.25em;
+	--pad-inline: 1em;
 	max-width: max-content;
 	margin-block: 1rem;
-	padding: 0.2em 0.85em;
+	padding-block: var(--pad-block);
+	padding-inline: var(--pad-inline);
 	display: inline-grid;
 	place-items: center;
 	color: var(--white, white);
@@ -189,6 +195,8 @@ p + p {
 
 	&-secondary {
 		@extend .btn;
+		padding-block: calc(var(--pad-block) - var(--border-sm));
+		padding-inline: calc(var(--pad-inline) - var(--border-sm));
 		border: var(--border-sm, 2px) solid var(--primary-clr);
 		border-radius: var(--radius-btn);
 	}
