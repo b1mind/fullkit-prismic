@@ -43,7 +43,7 @@
 		</div>
 	</header>
 
-	<main class="wrap-full spacer">
+	<main class="wrap-full">
 		<slot />
 	</main>
 

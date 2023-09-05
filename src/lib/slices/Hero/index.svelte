@@ -84,7 +84,7 @@
 		}
 
 		& > div {
-			// font-size: var(--text-med);
+			font-size: var(--text-md);
 			text-shadow: var(--shadow-txt);
 		}
 	}

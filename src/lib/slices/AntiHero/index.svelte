@@ -27,22 +27,24 @@
 		</div>
 
 		<header>
-			{#if prismic.isFilled.richText(slice.primary.heading)}
-				<PrismicRichText
-					field={slice.primary.heading}
-					components={{
-						label: Label
-					}}
-				/>
-			{/if}
+			<div>
+				{#if prismic.isFilled.richText(slice.primary.heading)}
+					<PrismicRichText
+						field={slice.primary.heading}
+						components={{
+							label: Label
+						}}
+					/>
+				{/if}
 
-			{#if prismic.isFilled.richText(slice.primary.text)}
-				<PrismicRichText field={slice.primary.text} />
-			{/if}
+				{#if prismic.isFilled.richText(slice.primary.text)}
+					<PrismicRichText field={slice.primary.text} />
+				{/if}
 
-			{#if prismic.isFilled.richText(slice.primary.text2)}
-				<PrismicRichText field={slice.primary.text2} />
-			{/if}
+				{#if prismic.isFilled.richText(slice.primary.text2)}
+					<PrismicRichText field={slice.primary.text2} />
+				{/if}
+			</div>
 
 			{#if prismic.isFilled.link(slice.primary.button)}
 				<Button {slice}>
@@ -60,6 +62,11 @@
 
 	header {
 		padding: var(--content-padding);
+
+		& > div {
+			font-size: var(--text-md);
+			text-shadow: 2px 1px 2px black;
+		}
 	}
 
 	.img {
@@ -67,6 +74,7 @@
 		position: relative;
 		isolation: isolate;
 		overflow: hidden;
+
 		&::after {
 			content: '';
 			position: absolute;
@@ -75,14 +83,10 @@
 		}
 	}
 
-	//todo put text-shadow on children richText remove parents
 	.layer {
-		grid-column: content;
 		display: grid;
 		grid-template-areas: 'l';
 		place-items: center;
-		text-shadow: 2px 1px 2px black;
-		font-size: var(--text-med);
 
 		& > * {
 			grid-area: l;
@@ -101,6 +105,7 @@
 
 	[data-slice-variation*='Full'] {
 		text-align: center;
+
 		& > * {
 			grid-column: full;
 		}

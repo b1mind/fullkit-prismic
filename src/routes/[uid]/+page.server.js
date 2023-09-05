@@ -10,11 +10,12 @@ export async function load({ params }) {
 
 	const page = await client.getByUID('page', params.uid);
 
-	//fixme contentRelationship fetch from component?
+	//fixme contentRelationship fetch from component not page
 	let data = page.data.slices.filter((item) => item.slice_type === 'testimonials');
 
 	let testimonials;
 
+	//fixme is this really the way?
 	if (data.length > 0) {
 		let items = data.flatMap((item) =>
 			item.items.map((item) => {

@@ -9,6 +9,11 @@
 	--fs-7: 1.5rem;
 	--fs-8: 2rem;
 	--fs-9: 2.2rem;
+	
+	--fw-thin: 100;
+	--fw-normal: initial; //note will this work? test it
+	--fw-bold: 600;
+	--fw-bolder: 800;
 
 	//spacings
 
@@ -39,19 +44,23 @@
 	--title-xs: 0.85rem;
 
 	--text-lg: var(--fs-8);
-	--text-med: var(--fs-6);
+	--text-md: var(--fs-6);
 	--text-sm: var(--fs-5);
 	--text-xs: var(--fs-2);
 
 	//note spacer and gap values should be hard coded? (not REM)
 	--spacer-xl: 2.5rem;
-	--spacer-lg: 10rem;
-	--spacer-md: 5rem;
-	--spacer-sm: 25px;
-	--spacer-xs: 10px;
+	--spacer-lg: 8rem;
+	--spacer-md: 2.5rem;
+	--spacer-sm: 1em;
+	--spacer-xs: 0.5em;
 
-	--gap-lg: ;
-	--gap-md: ;
+	@media (max-width: 600px) {
+		--spacer-lg: 4rem;
+	}
+
+	--gap-lg: 32px;
+	--gap-md: 24px;
 	--gap-sm: 16px;
 	--gap-xs: 8px;
 
@@ -63,11 +72,13 @@
 
 	--radius-img: 10px;
 	--radius-btn: 5px;
+	//note watch video Kevin just did on calc out/inner for matching
 	--radius-outer: ;
 	--radius-inner: ;
 }
 
 //worst perf selector .. when do I need to assign it to elements if I'm grid wrapped?
+//note test * border-box
 * {
 	box-sizing: border-box;
 }
@@ -121,15 +132,16 @@ nav a[aria-current='page'] {
 
 p {
 	margin: 0;
+	line-height: 1.2;
 }
 
 p + p {
-	margin-block-start: 0.4em;
+	margin-block-start: 0.8em;
 }
 
-// .spacer > * + * {
-// 	margin-block-start: 10rem;
-// }
+.spacer > * + * {
+	margin-block-start: var(--spacer-sm);
+}
 
 //> utils
 .wrapper {
@@ -175,12 +187,12 @@ p + p {
 	--pad-block: 0.25em;
 	--pad-inline: 1em;
 	max-width: max-content;
-	margin-block: 1rem;
 	padding-block: var(--pad-block);
 	padding-inline: var(--pad-inline);
 	display: inline-grid;
 	place-items: center;
 	color: var(--white, white);
+	font-weight: 600;
 	text-transform: capitalize;
 
 	&:hover {
@@ -200,4 +212,8 @@ p + p {
 		border: var(--border-sm, 2px) solid var(--primary-clr);
 		border-radius: var(--radius-btn);
 	}
+}
+
+.btn:last-child {
+	margin-block: var(--spacer-sm);
 }
