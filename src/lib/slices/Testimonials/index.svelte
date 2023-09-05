@@ -2,6 +2,7 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import { createClient, isFilled } from '@prismicio/client';
 	import { page } from '$app/stores';
+	import { PrismicImage } from '@prismicio/svelte';
 	// import { onMount } from 'svelte';
 
 	/** @type {import("@prismicio/client").Content.TestimonialsSlice} */
@@ -28,11 +29,25 @@
 		{item.data.person}
 		{item.data.title}
 		<PrismicRichText field={item.data.text} />
+		<div class="img">
+			<PrismicImage
+				width="56px"
+				height="56px"
+				field={item.data.avatar}
+				imgixParams={{ ar: '1:1', fit: 'crop' }}
+			/>
+		</div>
 	{/each}
 </section>
 
 <style>
 	section {
 		grid-column: content;
+	}
+
+	.img {
+		width: max-content;
+		border-radius: 9999px;
+		overflow: hidden;
 	}
 </style>

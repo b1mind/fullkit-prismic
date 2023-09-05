@@ -11,13 +11,21 @@ export async function load({ params }) {
 	const page = await client.getByUID('page', params.uid);
 
 	//fix contentRelationship fetch from component?
-	let slices = page.data.slices.filter((item) => item.slice_type === 'testimonials');
+	let data = page.data.slices.filter((item) => item.slice_type === 'testimonials');
+
 	let testimonials;
-	if (slices.length > 0) {
+
+	if (data.length > 0) {
+		let items = data.flatMap((item) =>
+			item.items.map((item) => {
+				return item.testimonial;
+			})
+		);
+
 		testimonials = await Promise.all(
-			slices[0].items.map((item) => {
-				if (isFilled.contentRelationship(item.testimonial)) {
-					return client.getByUID('testimonial', item.testimonial.uid);
+			items.map((item) => {
+				if (isFilled.contentRelationship(item)) {
+					return client.getByUID('testimonial', item.uid);
 				}
 			})
 		);

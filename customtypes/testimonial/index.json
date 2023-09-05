@@ -6,18 +6,18 @@
 	"status": true,
 	"json": {
 		"Main": {
+			"uid": {
+				"config": {
+					"label": "UID"
+				},
+				"type": "UID"
+			},
 			"person": {
 				"type": "Text",
 				"config": {
 					"label": "person",
 					"placeholder": ""
 				}
-			},
-			"uid": {
-				"config": {
-					"label": "UID"
-				},
-				"type": "UID"
 			},
 			"title": {
 				"type": "Text",
@@ -31,8 +31,8 @@
 				"config": {
 					"label": "avatar",
 					"constraint": {
-						"width": 50,
-						"height": 50
+						"width": 300,
+						"height": 300
 					},
 					"thumbnails": []
 				}
