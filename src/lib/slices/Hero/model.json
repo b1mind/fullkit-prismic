@@ -58,6 +58,18 @@
             "placeholder": "optional"
           }
         },
+        "button_type": {
+          "type": "Select",
+          "config": {
+            "label": "button type",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ],
+            "default_value": "primary"
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
@@ -119,6 +131,91 @@
           "config": {
             "label": "button text",
             "placeholder": ""
+          }
+        },
+        "button_type": {
+          "type": "Select",
+          "config": {
+            "label": "button type",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ],
+            "default_value": "primary"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "pSplit",
+      "name": "Split",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "!one per page",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "text2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button text",
+            "placeholder": ""
+          }
+        },
+        "button_type": {
+          "type": "Select",
+          "config": {
+            "label": "button type",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ],
+            "default_value": "primary"
           }
         },
         "image": {

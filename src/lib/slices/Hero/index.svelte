@@ -11,50 +11,67 @@
 	$$restProps;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section
+	class="wrap-full"
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
 	<div class="layer">
-		<div class="img">
-			<PrismicImage field={slice.primary.image} />
-		</div>
 		<header>
-			<PrismicRichText
-				field={slice.primary.heading}
-				components={{
-					label: Label
-				}}
-			/>
-			<PrismicRichText field={slice.primary.text} />
-			{#if prismic.isFilled.richText(slice.primary.text2)}
-				<PrismicRichText field={slice.primary.text2} />
-			{/if}
+			<div>
+				<PrismicRichText
+					field={slice.primary.heading}
+					components={{
+						label: Label
+					}}
+				/>
+				<PrismicRichText field={slice.primary.text} />
+				{#if prismic.isFilled.richText(slice.primary.text2)}
+					<PrismicRichText field={slice.primary.text2} />
+				{/if}
+			</div>
 
 			{#if prismic.isFilled.link(slice.primary.button)}
 				<Button {slice}>
 					{slice.primary.button_text}
 				</Button>
 			{/if}
-
-			{#if prismic.isFilled.link(slice.primary.button)}
-				<PrismicLink class="btn{`${slice.primary.button_type}`}" field={slice.primary.button}>
-					{slice.primary.button_text}
-				</PrismicLink>
-			{/if}
 		</header>
+		<div class="img">
+			<PrismicImage
+				field={slice.primary.image}
+				aria-hidden={slice.variation === 'pFull' || 'default' ? true : undefined}
+			/>
+		</div>
 	</div>
 </section>
 
+<!-- svelte-ignore -->
 <style lang="scss">
 	//todo need to convert to rems? and make tokens
 	section {
 		min-height: 400px;
-		max-height: 720px;
+	}
+
+	//todo make full screen background or use img
+	.layer {
+		grid-column: content;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: 'l';
+		place-items: center;
+
+		& > * {
+			grid-area: l;
+		}
 	}
 
 	.img {
-		max-height: 720px;
+		max-height: 620px;
 		position: relative;
 		isolation: isolate;
 		overflow: hidden;
+		z-index: -1;
 
 		&::after {
 			content: '';
@@ -65,36 +82,66 @@
 	}
 
 	header {
-		padding: var(--gap-xs);
-	}
+		@media (max-width: 600px) {
+			padding-inline: var(--gap-sm);
+		}
 
-	//todo make full screen background or use img
-	.layer {
-		grid-column: content;
-		display: grid;
-		grid-template-areas: 'l';
-		place-items: center;
-		text-shadow: 2px 1px 2px black;
-		font-size: var(--text-med);
-
-		& > * {
-			grid-area: l;
-			z-index: 1;
+		& > div {
+			// font-size: var(--text-med);
+			text-shadow: var(--shadow-txt);
 		}
 	}
 
 	[data-slice-variation='default'] {
-		grid-column: content;
 		.img {
-			border-radius: var(--round-out, 10px);
+			border-radius: var(--radius-img, 10px);
 		}
 	}
 
 	[data-slice-variation*='Full'] {
 		text-align: center;
-		background-color: var(--secondary-bg);
+
 		& > * {
 			grid-column: full;
+		}
+
+		//wish something fun for larger screens... they deserve it! (the forgotten)
+		@media (min-width: 1920px) {
+			.img {
+				border-radius: var(--radius-img, 10px);
+			}
+		}
+	}
+
+	[data-slice-variation*='Split'] {
+		.layer {
+			grid-column: content-start / full-end;
+			grid-template-columns: 1fr 1.5fr;
+			grid-template-areas: 'header img';
+			column-gap: var(--gap-sm);
+			justify-items: start;
+
+			@media (max-width: 600px) {
+				grid-column: full;
+				grid-template-columns: 1fr;
+				grid-template-areas: 'header' 'img';
+			}
+		}
+
+		header {
+			grid-area: header;
+		}
+
+		.img {
+			grid-area: img;
+
+			&::after {
+				content: initial;
+			}
+
+			@media (max-width: 600px) {
+				max-height: 420px;
+			}
 		}
 	}
 </style>
