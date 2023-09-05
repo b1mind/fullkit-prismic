@@ -8,6 +8,7 @@ Todo:
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
+    ☐ code block (bring in https://shiki.matsu.io/)
     
   ☐ explain what the site is about (showing off slices/Prismic)
   ☐ finish css props and tokens + implement rest
@@ -20,6 +21,7 @@ Learn:
 WishList:
   ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
+    ☐ alt: you can use prismic functions to getAllByType('post')
   ☐ convert this to a template we can npx into a new Prismic repo/site
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
@@ -38,6 +40,7 @@ Debt:
 //ask
   Away to make variations uid accept snake/kabob (camelCaseOnly?)
   better way to load content relationship data (right now checking and fetching on every +page.server or +layout.server)
+  Rich text field Unselected options by default and "select all" link (swap it up!)
 
 Archive:
   ✔ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X) @done @project(Learn)
