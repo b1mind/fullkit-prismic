@@ -25,6 +25,7 @@
 	--section-max: ;
 	--section-min: ;
 
+	--brand-clr: ;
 	--primary-clr: blueviolet;
 	--primary-bg: #1b1b1b;
 	--secondary-clr: ;
@@ -52,8 +53,8 @@
 	--spacer-xl: 2.5rem;
 	--spacer-lg: 8rem;
 	--spacer-md: 2.5rem;
-	--spacer-sm: 1em;
-	--spacer-xs: 0.5em;
+	--spacer-sm: 1rem;
+	--spacer-xs: 0.25rem;
 
 	@media (max-width: 600px) {
 		--spacer-lg: 4rem;
@@ -64,8 +65,8 @@
 	--gap-sm: 16px;
 	--gap-xs: 8px;
 
-	--pad-block: 0.25em;
-	--pad-inline: 1em;
+	--pad-block: 0.25rem;
+	--pad-inline: 1rem;
 
 	--border-sm: 2px;
 	--border-md: 4px;
@@ -135,10 +136,27 @@ p {
 	line-height: 1.2;
 }
 
-p + p {
-	margin-block-start: 0.8em;
+h1:first-child {
+	margin-block-end: 0.7rem;
+	line-height: 1.3;
 }
 
+//mustache  
+p ~ h1 {
+	margin-block-start: 0.1rem;
+}
+
+header p:first-child {
+	// color: var(--text-clr, grey);
+  font-size: var(--text-sm);	
+	opacity: 0.69;
+}
+
+p + p {
+	margin-block-start: 0.75em;
+}
+
+//not really using.. clean up isle 156
 .spacer > * + * {
 	margin-block-start: var(--spacer-sm);
 }
@@ -184,8 +202,8 @@ p + p {
 }
 
 .btn {
-	--pad-block: 0.25em;
-	--pad-inline: 1em;
+	--pad-block: 0.35rem;
+	--pad-inline: 1.2rem;
 	max-width: max-content;
 	padding-block: var(--pad-block);
 	padding-inline: var(--pad-inline);
@@ -209,7 +227,7 @@ p + p {
 		@extend .btn;
 		padding-block: calc(var(--pad-block) - var(--border-sm));
 		padding-inline: calc(var(--pad-inline) - var(--border-sm));
-		border: var(--border-sm, 2px) solid var(--primary-clr);
+		border: var(--border-sm, 3px) solid var(--primary-clr);
 		border-radius: var(--radius-btn);
 	}
 }

@@ -1,6 +1,6 @@
 <script>
 	import * as prismic from '@prismicio/client';
-	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
 
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
@@ -19,6 +19,9 @@
 	<div class="layer">
 		<header>
 			<div>
+				{#if prismic.isFilled.richText(slice.primary.text2)}
+					<PrismicRichText field={slice.primary.text2} />
+				{/if}
 				<PrismicRichText
 					field={slice.primary.heading}
 					components={{
@@ -26,9 +29,6 @@
 					}}
 				/>
 				<PrismicRichText field={slice.primary.text} />
-				{#if prismic.isFilled.richText(slice.primary.text2)}
-					<PrismicRichText field={slice.primary.text2} />
-				{/if}
 			</div>
 
 			{#if prismic.isFilled.link(slice.primary.button)}
