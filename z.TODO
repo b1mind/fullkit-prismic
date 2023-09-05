@@ -1,22 +1,21 @@
 Todo:
+  ☐ !!snag a design + colors from some place just to jaz this demo up
+  ☐ style buttons and links better
+  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
+
   ☐ use Slice Simulator to make more slices and variations
     ☐ TextImage / more variations
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
     
-  ☐ style buttons and links better
-  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
   ☐ explain what the site is about (showing off slices/Prismic)
-  ☐ snag a design + colors from some place just to jaz this demo up
   ☐ finish css props and tokens + implement rest
 
 Learn: 
   ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
-  ☐ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X)
-    ☐ repeatable fields
-
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
+  ☐ find out more about imgixParams
 
 WishList:
   ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
@@ -41,6 +40,8 @@ Debt:
   better way to load content relationship data (right now checking and fetching on every +page.server or +layout.server)
 
 Archive:
+  ✔ more about slices and field options. (Finish Alex's course https://youtu.be/nfZu56KsK_Q?si=TK2HwsNJLM61aO2X) @done @project(Learn)
+  ✔ repeatable fields @done @project(Learn)
   ✔ make design system and slice variation choices @done @project(Todo)
   ✔ start tokens and data-slice-variation logic @done @project(Todo)
   ✔ Hero (h1 only) / anti-Heros (h2 or Text Only) @done @project(Todo)
