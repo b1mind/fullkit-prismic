@@ -4,17 +4,17 @@
 	// import { PrismicLink, PrismicText } from '@prismicio/svelte';
 
 	export let data;
+	//fix type any
+	/** @type any */
 	const { sliceNav } = data;
 </script>
 
-<header class="wrap-content">
-	<Heading1>{$page.data.page.data.title[0]?.text}</Heading1>
-	<nav class="sub-page-navigation">
-		{#each sliceNav as nav}
-			<a href={nav.url}>{nav.data.title[0]?.text}</a>
-		{/each}
-	</nav>
-</header>
+<nav class="wrap-content sub-page-navigation">
+	{#each sliceNav as nav}
+		{@const currentUrl = $page.url.pathname.includes(nav?.url) ? 'page' : undefined}
+		<a href={nav.url} aria-current={currentUrl}>{nav.data.title[0]?.text}</a>
+	{/each}
+</nav>
 
 <slot />
 

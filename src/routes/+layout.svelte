@@ -33,7 +33,7 @@
 
 			<nav>
 				{#each navigation.data.nav as nav}
-					{@const currentUrl = $page.url.pathname === nav.link.url ? 'page' : undefined}
+					{@const currentUrl = $page.url.pathname.startsWith(nav.link.url) ? 'page' : undefined}
 
 					<PrismicLink aria-current={currentUrl} field={nav.link}>
 						{nav.label}
