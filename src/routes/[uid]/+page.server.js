@@ -10,7 +10,7 @@ export async function load({ params }) {
 
 	const page = await client.getByUID('page', params.uid);
 
-	//fix contentRelationship fetch from component?
+	//fixme contentRelationship fetch from component?
 	let data = page.data.slices.filter((item) => item.slice_type === 'testimonials');
 
 	let testimonials;

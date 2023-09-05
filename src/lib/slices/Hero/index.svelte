@@ -46,14 +46,11 @@
 	</div>
 </section>
 
-<!-- svelte-ignore -->
 <style lang="scss">
-	//todo need to convert to rems? and make tokens
 	section {
-		min-height: 400px;
+		min-height: 420px;
 	}
 
-	//todo make full screen background or use img
 	.layer {
 		grid-column: content;
 		display: grid;

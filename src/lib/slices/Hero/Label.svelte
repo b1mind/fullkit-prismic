@@ -6,7 +6,6 @@
 <span class={node.data.label}><slot /></span>
 
 <style>
-	/* //fixme should be able to use Heading size prop? */
 	.title-lg {
 		font-size: var(--title-lg, 2.25rem);
 	}

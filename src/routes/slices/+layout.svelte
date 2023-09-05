@@ -1,10 +1,8 @@
 <script>
 	import { page } from '$app/stores';
-	import Heading1 from '$lib/components/PrismicRichText/Heading1.svelte';
-	// import { PrismicLink, PrismicText } from '@prismicio/svelte';
 
 	export let data;
-	//fix type any
+	//fixme type any
 	/** @type any */
 	const { sliceNav } = data;
 </script>
