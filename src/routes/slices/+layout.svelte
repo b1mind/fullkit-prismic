@@ -24,5 +24,12 @@
 		justify-content: end;
 		align-items: center;
 		gap: 0.5rem 1rem;
+
+		a::after {
+			transform-origin: left;
+		}
+		a:hover::after {
+			transform-origin: right;
+		}
 	}
 </style>

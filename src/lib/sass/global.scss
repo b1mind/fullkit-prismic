@@ -132,7 +132,8 @@ img {
 }
 
 a {
-	color: var(--primary-clr);
+	color: var(--font-clr);
+	text-decoration-color: var(--primary-clr);
 	transition: text-decoration 0.2s ease-in-out;
 
 	&:hover {
