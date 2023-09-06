@@ -10,7 +10,7 @@
 	export let slice;
 	$$restProps;
 
-	//note learn if we can pass in components
+	//note learn if we can pass in props to components
 	const components = {
 		label: Label
 	};
@@ -131,6 +131,7 @@
 
 		.img {
 			grid-area: img;
+			border-radius: var(--radius-img) 0 0 var(--radius-img);
 
 			&::after {
 				content: initial;
