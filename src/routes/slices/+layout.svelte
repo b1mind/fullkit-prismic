@@ -7,7 +7,7 @@
 	const { sliceNav } = data;
 </script>
 
-<nav class="wrap-content sub-page-navigation">
+<nav class="wrap-content" aria-label="slices">
 	{#each sliceNav as nav}
 		{@const currentUrl = $page.url.pathname.includes(nav?.url) ? 'page' : undefined}
 		<a href={nav.url} aria-current={currentUrl}>{nav.data.title[0]?.text}</a>

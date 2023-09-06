@@ -31,7 +31,7 @@
 		<div>
 			<b><a href="/" class="logo">{settings.data.siteName}</a></b>
 
-			<nav>
+			<nav aria-label="main">
 				{#each navigation.data.nav as nav}
 					{@const currentUrl = $page.url.pathname.startsWith(nav.link.url) ? 'page' : undefined}
 
