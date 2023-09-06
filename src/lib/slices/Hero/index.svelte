@@ -9,6 +9,11 @@
 	/** @type {import("@prismicio/client").Content.AntiHeroSlice} */
 	export let slice;
 	$$restProps;
+
+	//note learn if we can pass in components
+	const components = {
+		label: Label
+	};
 </script>
 
 <section
@@ -20,14 +25,9 @@
 		<header>
 			<div>
 				{#if prismic.isFilled.richText(slice.primary.text2)}
-					<PrismicRichText field={slice.primary.text2} />
+					<PrismicRichText field={slice.primary.text2} {components} />
 				{/if}
-				<PrismicRichText
-					field={slice.primary.heading}
-					components={{
-						label: Label
-					}}
-				/>
+				<PrismicRichText field={slice.primary.heading} {components} />
 				<PrismicRichText field={slice.primary.text} />
 			</div>
 

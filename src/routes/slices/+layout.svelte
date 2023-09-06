@@ -18,7 +18,7 @@
 
 <style lang="scss">
 	nav {
-		padding-block-end: var(--spacer-xs, 10px);
+		padding-block-end: var(--spacer-sm);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: end;

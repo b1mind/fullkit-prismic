@@ -987,6 +987,16 @@ export type FeaturesSlice = prismic.SharedSlice<'features', FeaturesSliceVariati
  */
 export interface HeroSliceDefaultPrimary {
 	/**
+	 * mustache field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: optional
+	 * - **API ID Path**: hero.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
 	 * heading field in *Hero → Primary*
 	 *
 	 * - **Field Type**: Title
@@ -1005,16 +1015,6 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField;
-
-	/**
-	 * text2 field in *Hero → Primary*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: optional
-	 * - **API ID Path**: hero.primary.text2
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	text2: prismic.RichTextField;
 
 	/**
 	 * button field in *Hero → Primary*

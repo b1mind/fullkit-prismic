@@ -19,7 +19,6 @@
 <style lang="scss">
 	section {
 		grid-column: content;
-		padding-block: var(--spacer-lg);
 	}
 
 	figure {
@@ -59,7 +58,7 @@
 	[data-slice-variation*='Full'] {
 		//have to override section
 		grid-column: full;
-		background-color: var(--secondary-bg-light, grey);
+		background-color: var(--secondary-bg);
 
 		& > * {
 			grid-column: content;

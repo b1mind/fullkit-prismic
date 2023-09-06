@@ -18,6 +18,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "primary",
 				"type": "Select"
+			},
+			"text2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat aliqua sint cillum nostrud commodo anim dolor nisi minim aliquip sint."
+						}
+					}
+				]
 			}
 		},
 		"items": []
@@ -162,7 +173,6 @@
 				"type": "Select"
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
@@ -180,6 +190,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
