@@ -13,6 +13,8 @@
 	
 	--white-1: 197, 24%, 94%;
 	--white-2: 60, 10%, 92%;
+	--white-6: 240, 100%, 92%;
+	--white-7: 240, 90%, 95%;
 	
 	--orange-1: 11, 61%, 42%;
 	--orange-3: 11, 96%, 61%;
@@ -53,13 +55,13 @@
 
 	--secondary-clr: hsl(var(--purple-5));
 	--secondary-bg: hsl(var(--purple-2));
-	--secondary-alt: hsl(var(--purple-3));
+	--secondary-alt: hsl(var(--purple-4));
 
 	--highlight-clr: hsl(var(--orange-8));
 	--highlight-bg: hsl(var(--purple-5));
 
-	--font-clr: hsl(var(--white-1));
-	--font-clr-alt: hsl(var(--purple-5));
+	--font-clr: hsl(var(--white-7));
+	--font-clr-alt: hsl(var(--purple-6));
 
 	--shadow-cat: ;
 	--shadow-box: ;
@@ -129,7 +131,7 @@ body {
 
 body {
 	margin: 0;
-	color: whitesmoke;
+	color: var(--font-clr-alt);
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	background-color: var(--primary-bg);
@@ -144,7 +146,7 @@ img {
 
 a:not(.btn, nav a) {
 	position: relative;
-	color: var(--font-clr);
+	color: var(--font-clr-alt);
 	text-decoration-color: var(--primary-clr);
 	transition: text-decoration 0.2s ease-in-out;
 	text-decoration: none;
@@ -152,9 +154,9 @@ a:not(.btn, nav a) {
 	&::after {
 			content: '';
 			position: absolute;
-			right: 0;
-			bottom: -0.1em;
-			width: 100%;
+			left: 0;
+			bottom: 0;
+			width: 102%;
 			height: 0.05em;
 			background-color: var(--primary-clr);
 			transform: scale(1, 1);
@@ -178,7 +180,7 @@ nav a {
 	position: relative;
 	padding-block-end: 0.25rem;
 	border-bottom: 0.15em solid transparent;
-	color: var(--font-clr);
+	color: var(--font-clr-alt);
 	text-decoration: none;
 	transition: color 0.5s;
 	
@@ -227,6 +229,10 @@ h1 {
 	margin-block-start: 0;
 	margin-block-end: var(--spacer-sm);
 	line-height: 1.1;
+}
+
+h1, h2, h3 {
+	color: var(--font-clr);
 }
 
 p + p {
@@ -289,7 +295,7 @@ section + section {
 
 //above headings
 .mustache {
-	color: var(--font-clr-alt);
+	color: var(--secondary-alt);
 	font-size: var(--text-sm);
 	margin-block-end: var(--spacer-xs);
 }
@@ -305,7 +311,7 @@ section + section {
 	text-decoration: none;
 
 	&:hover {
-		color: var(--white-1);
+		color: var(--font-clr);
 		background-color: var(--primary-alt);
 		border-color: transparent;
 		text-decoration: none;
@@ -319,7 +325,7 @@ section + section {
 
 	&-secondary {
 		padding: var(--btn-out);
-		color: var(--white);
+		color: var(--font-clr);
 		border: var(--border-sm) solid var(--primary-clr);
 		border-radius: var(--radius-btn);
 	}
