@@ -5,6 +5,6 @@
 	const { button, button_type } = slice.primary;
 </script>
 
-<PrismicLink class="btn{`-${button_type}`}" field={button}>
+<PrismicLink class="btn btn{`-${button_type}`}" field={button}>
 	<slot />
 </PrismicLink>
