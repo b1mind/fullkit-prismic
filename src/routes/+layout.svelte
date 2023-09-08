@@ -76,8 +76,7 @@
 
 	.logo {
 		display: block;
-		//hacks need to refactor header (component?)
-		margin-block-end: 0.4rem;
+		font-size: 1.5rem;
 		color: white;
 	}
 

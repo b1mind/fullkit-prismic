@@ -37,6 +37,7 @@
 				</Button>
 			{/if}
 		</header>
+
 		<div class="img">
 			<PrismicImage
 				field={slice.primary.image}
@@ -48,7 +49,7 @@
 
 <style lang="scss">
 	section {
-		min-height: 420px;
+		min-height: var(--block-min);
 	}
 
 	.layer {
@@ -113,7 +114,7 @@
 	[data-slice-variation*='Split'] {
 		.layer {
 			grid-column: content-start / full-end;
-			grid-template-columns: 1fr 1.5fr;
+			grid-template-columns: minmax(var(--content-min), 1fr) 1.5fr;
 			grid-template-areas: 'header img';
 			column-gap: var(--gap-sm);
 			justify-items: start;
