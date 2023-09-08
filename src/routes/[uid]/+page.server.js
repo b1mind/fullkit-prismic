@@ -5,8 +5,8 @@ import { isFilled } from '@prismicio/client';
 export const prerender = true;
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
-	const client = createClient();
+export async function load({ fetch, params }) {
+	const client = createClient({ fetch });
 
 	const page = await client.getByUID('page', params.uid);
 
