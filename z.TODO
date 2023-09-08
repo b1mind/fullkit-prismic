@@ -1,33 +1,40 @@
 Todo:
-  ☐ !!snag a design + colors from some place just to jaz this demo up
-  ☐ style buttons and links better
-  ☐ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`)
+  ✔ !!snag a design + colors from some place just to jaz this demo up @done
+  ✔ style buttons and links better @done
+  ✔ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`) @done
+  ☐ create a gotcha privacy policy for fun egg
+  ☐ 404 page (with slice/page type too?)
 
   ☐ use Slice Simulator to make more slices and variations
-    ☐ TextImage / more variations
+    ☐ mustache component for hero's | remake anti based on hero (copy model.json)
+    ☐ second button for heros
+    ☐ TextImage improvements / more variations
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
     ☐ code block (bring in https://shiki.matsu.io/)
+    ☐ finish Testimonials slice
+    ☐ double decker slice (two img/text/button sections stacked with alt bg boxes)
     
   ☐ explain what the site is about (showing off slices/Prismic)
   ☐ finish css props and tokens + implement rest
 
 Learn: 
-  ☐ learn/decide a middle ground for when to make a new slice vs variation (UX/DX)
+  ✔ learn/decide a middle ground for when to make a new slice vs variation (UX/DX) @done
+  ✔ find out more about imgixParams @done
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
-  ☐ find out more about imgixParams
 
 WishList:
   ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
     ☐ alt: you can use prismic functions to getAllByType('post')
   ☐ convert this to a template we can npx into a new Prismic repo/site
+  ☐ try a SSR deployment with node adapter on capRover
   ☐ JAMstack or Node.JS (graph query fetch from node, handle caching?)
 
 Debt:
-  ☐ fix content relationship from component / util
-  ☐ fix header and footer to be full > content
+  ✔ fix header and footer to be full > content @done
+  ☐ fix content relationship or make a util for it if not slice (page only atm)
   ☐ learn how to use jsDocs and properly fix @ type any
   ☐ fix $$restProps on components/slices (is there another way?)
   
