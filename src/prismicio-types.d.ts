@@ -378,7 +378,9 @@ type SlicePageDocumentDataSlicesSlice =
 	| RichTextSlice
 	| AntiHeroSlice
 	| HeroSlice
-	| MarkDownSlice;
+	| MarkDownSlice
+	| PageHeadingSlice
+	| FeaturesSlice;
 
 /**
  * Content for SlicePage documents
@@ -1096,10 +1098,10 @@ export interface HeroSlicePFullPrimary {
 	text: prismic.RichTextField;
 
 	/**
-	 * text2 field in *Hero → Primary*
+	 * mustache field in *Hero → Primary*
 	 *
 	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: optional
 	 * - **API ID Path**: hero.primary.text2
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
@@ -1185,7 +1187,7 @@ export interface HeroSlicePSplitPrimary {
 	text: prismic.RichTextField;
 
 	/**
-	 * text2 field in *Hero → Primary*
+	 * mustache field in *Hero → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -1304,6 +1306,48 @@ type MarkDownSliceVariation = MarkDownSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type MarkDownSlice = prismic.SharedSlice<'mark_down', MarkDownSliceVariation>;
+
+/**
+ * Primary content in *PageHeading → Primary*
+ */
+export interface PageHeadingSliceDefaultPrimary {
+	/**
+	 * heading field in *PageHeading → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Heading1
+	 * - **API ID Path**: page_heading.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+}
+
+/**
+ * Default variation for PageHeading Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeadingSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<PageHeadingSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *PageHeading*
+ */
+type PageHeadingSliceVariation = PageHeadingSliceDefault;
+
+/**
+ * PageHeading Shared Slice
+ *
+ * - **API ID**: `page_heading`
+ * - **Description**: PageHeading
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeadingSlice = prismic.SharedSlice<'page_heading', PageHeadingSliceVariation>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -1468,6 +1512,10 @@ declare module '@prismicio/client' {
 			MarkDownSliceDefaultPrimary,
 			MarkDownSliceVariation,
 			MarkDownSliceDefault,
+			PageHeadingSlice,
+			PageHeadingSliceDefaultPrimary,
+			PageHeadingSliceVariation,
+			PageHeadingSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

@@ -40,6 +40,12 @@
 						},
 						"mark_down": {
 							"type": "SharedSlice"
+						},
+						"page_heading": {
+							"type": "SharedSlice"
+						},
+						"features": {
+							"type": "SharedSlice"
 						}
 					}
 				}

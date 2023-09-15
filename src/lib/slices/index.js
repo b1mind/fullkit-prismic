@@ -5,6 +5,7 @@ import TextImage from './TextImage/index.svelte';
 import Features from './Features/index.svelte';
 import Hero from './Hero/index.svelte';
 import MarkDown from './MarkDown/index.svelte';
+import PageHeading from './PageHeading/index.svelte';
 import RichText from './RichText/index.svelte';
 import Testimonials from './Testimonials/index.svelte';
 
@@ -14,6 +15,7 @@ export const components = {
 	features: Features,
 	hero: Hero,
 	mark_down: MarkDown,
+	page_heading: PageHeading,
 	rich_text: RichText,
 	testimonials: Testimonials
 };
