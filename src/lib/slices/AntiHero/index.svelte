@@ -1,7 +1,7 @@
 <script>
 	import * as prismic from '@prismicio/client';
-	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
-	import Label from './Label.svelte';
+	import { PrismicImage } from '@prismicio/svelte';
+	import Label from '$lib/components/Label.svelte';
 
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import Button from '$lib/components/Button.svelte';
