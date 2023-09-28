@@ -89,7 +89,7 @@
 	--spacer-lg: 8rem;
 	--spacer-md: 2.5rem;
 	--spacer-sm: 1.5rem;
-	--spacer-xs: 0.25rem;
+	--spacer-xs: 0.75rem;
 
 	@media (max-width: 600px) {
 		--spacer-lg: 4rem;
@@ -331,5 +331,5 @@ section + section {
 }
 
 .btn:last-child {
-	margin-block: var(--spacer-sm);
+	margin-block: var(--spacer-xs);
 }
