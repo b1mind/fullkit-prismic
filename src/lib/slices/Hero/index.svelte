@@ -122,7 +122,13 @@
 			@media (max-width: 600px) {
 				grid-column: full;
 				grid-template-columns: 1fr;
-				grid-template-areas: 'header' 'img';
+				grid-template-areas:
+					'header'
+					'img';
+
+				.img {
+					border-radius: 0px;
+				}
 			}
 		}
 
