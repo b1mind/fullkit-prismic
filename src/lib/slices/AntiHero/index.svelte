@@ -6,7 +6,9 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import Button from '$lib/components/Button.svelte';
 
-	/** @type {import("@prismicio/client").Content.AntiHeroSlice} */
+	//fixme type for bg_color?
+	// /** @type {import("@prismicio/client").Content.AntiHeroSlice} */
+	/** @type any */
 	export let slice;
 	$$restProps;
 </script>
