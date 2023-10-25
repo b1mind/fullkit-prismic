@@ -39,7 +39,8 @@
 
 	.img {
 		grid-area: img;
-		border-radius: 10px;
+		place-self: center;
+		border-radius: var(--radius-img);
 		overflow: hidden;
 	}
 

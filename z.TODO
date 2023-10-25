@@ -2,7 +2,6 @@ Todo:
   ✔ !!snag a design + colors from some place just to jaz this demo up @done
   ✔ style buttons and links better @done
   ✔ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`) @done
-  ☐ create a gotcha privacy policy for fun egg
   ☐ 404 page (with slice/page type too?)
 
   ☐ use Slice Simulator to make more slices and variations
@@ -25,6 +24,7 @@ Learn:
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
 
 WishList:
+  ☐ create a easter egg type privacy policy for fun
   ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?
     ☐ alt: you can use prismic functions to getAllByType('post')
