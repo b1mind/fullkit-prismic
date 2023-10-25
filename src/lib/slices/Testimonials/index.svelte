@@ -10,29 +10,82 @@
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<PrismicRichText field={slice.primary.heading} />
-	{#each $page.data.testimonials as item}
-		{item.data.person}
-		{item.data.title}
-		<PrismicRichText field={item.data.text} />
-		<div class="img">
-			<PrismicImage
-				width="56px"
-				height="56px"
-				field={item.data.avatar}
-				imgixParams={{ ar: '1:1', fit: 'crop' }}
-			/>
-		</div>
-	{/each}
+	<div class="cards">
+		{#each $page.data.testimonials as item}
+			<div class="card">
+				<div class="img">
+					<PrismicImage
+						width="56px"
+						height="56px"
+						field={item.data.avatar}
+						imgixParams={{ ar: '1:1', fit: 'crop' }}
+					/>
+				</div>
+				<!-- this is lazy lol do better -->
+
+				<header>
+					<b>
+						{item.data.person}
+					</b>
+					<br />
+					<i>
+						{item.data.title}
+					</i>
+				</header>
+				<div class="text">
+					<PrismicRichText field={item.data.text} />
+				</div>
+			</div>
+		{/each}
+	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		grid-column: content;
 	}
 
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: 1rem;
+	}
+
+	.card {
+		padding: 1rem;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		grid-template-rows: max-content 1fr;
+		grid-template-areas:
+			'img header header'
+			'text text text';
+		gap: 1rem;
+		background: var(--secondary-bg);
+		border-radius: var(--border-md);
+
+		@media (max-width: 836px) and (min-width: 555px) {
+			&:last-child {
+				grid-column: 1 / span 2;
+				grid-template-areas:
+					'img header header'
+					'img text text';
+			}
+		}
+	}
+
+	header {
+		align-self: center;
+	}
+
 	.img {
+		grid-area: img;
 		width: max-content;
+		height: max-content;
 		border-radius: 9999px;
 		overflow: hidden;
+	}
+
+	.text {
+		grid-area: text;
 	}
 </style>
