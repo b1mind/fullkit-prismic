@@ -57,8 +57,8 @@
 		grid-template-columns: max-content 1fr;
 		grid-template-rows: max-content 1fr;
 		grid-template-areas:
-			'img header header'
-			'text text text';
+			'img header'
+			'text text';
 		gap: 1rem;
 		background: var(--secondary-bg);
 		border-radius: var(--border-md);
@@ -67,8 +67,8 @@
 			&:last-child {
 				grid-column: 1 / span 2;
 				grid-template-areas:
-					'img header header'
-					'img text text';
+					'img header'
+					'img text';
 			}
 		}
 	}
