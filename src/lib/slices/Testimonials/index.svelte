@@ -47,7 +47,7 @@
 
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 1rem;
 	}
 
@@ -63,9 +63,9 @@
 		background: var(--secondary-bg);
 		border-radius: var(--border-md);
 
-		@media (max-width: 836px) and (min-width: 555px) {
+		@media (max-width: 830px) and (min-width: 555px) {
 			&:last-child {
-				grid-column: 1 / span 2;
+				grid-column: span 2;
 				grid-template-areas:
 					'img header'
 					'img text';
@@ -82,6 +82,7 @@
 		width: max-content;
 		height: max-content;
 		border-radius: 9999px;
+		border: 3px solid var(--primary-bg);
 		overflow: hidden;
 	}
 
