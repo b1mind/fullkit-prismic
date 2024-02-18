@@ -150,8 +150,6 @@ img {
 a:not(.btn, nav a) {
 	position: relative;
 	color: var(--font-clr-alt);
-	text-decoration-color: var(--primary-clr);
-	transition: text-decoration 0.2s ease-in-out;
 	text-decoration: none;
 
 	&::after {
@@ -160,9 +158,8 @@ a:not(.btn, nav a) {
 			left: 0;
 			bottom: 0;
 			width: 102%;
-			height: 0.05em;
+			height: 2px;
 			background-color: var(--primary-clr);
-			transform: scale(1, 1);
 			transform-origin: bottom;
 			// needs more support?
 			// translate: 0 0.1em;
@@ -173,7 +170,7 @@ a:not(.btn, nav a) {
 
 		&:hover::after,
 		&:focus::after {
-			transform: scale(1, 10);
+			transform: scale(1, 5);
 			background-color: var(--primary-clr-op);
 		}
 }
@@ -244,9 +241,9 @@ p + p {
 	margin-block-start: var(--spacer-sm);
 }
 
-section:first-of-type {
-	padding-block-start: var(--spacer-md);
-}
+// section:first-of-type {
+// 	padding-block-start: var(--spacer-md);
+// }
 
 section + section {
 	padding-block: var(--spacer-lg);

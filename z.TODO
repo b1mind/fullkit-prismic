@@ -3,6 +3,8 @@ Todo:
   ✔ style buttons and links better @done
   ✔ figure out a unique .spacer/.flow > util class... (:has? :not? or fallback `* + *`) @done
   ☐ 404 page (with slice/page type too?)
+  ☐ sitemap creation with [uid] and Prismic
+  ☐ Make an actual design and prep for real theme migration.
 
   ☐ use Slice Simulator to make more slices and variations
     ☐ mustache component for hero's | remake anti based on hero (copy model.json)
@@ -11,8 +13,7 @@ Todo:
     ☐ cards / grid - flex variations
     ☐ large text / single quote variations
     ☐ 2 col text with middle cutter border
-    ☐ code block (bring in https://shiki.matsu.io/)
-    ☐ finish Testimonials slice
+    ✔ finish Testimonials slice @done
     ☐ double decker slice (two img/text/button sections stacked with alt bg boxes)
     
   ☐ explain what the site is about (showing off slices/Prismic)
@@ -24,6 +25,7 @@ Learn:
   ☐ learn Prismic Graph query (https://prismic.io/docs/graphquery-rest-api)
 
 WishList:
+  ☐ code block (bring in https://shiki.matsu.io/)
   ☐ create a easter egg type privacy policy for fun
   ☐ come up with a better slice page structure (https://prismic.io/docs/graphquery-rest-api)
   ☐ make a blog + few faux posts after learning Graph Query + Content-Relationships // Node or JAM?

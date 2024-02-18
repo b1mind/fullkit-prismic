@@ -1,16 +1,16 @@
 <script>
-	import '$lib/sass/global.scss';
-	import { page } from '$app/stores';
-	import { PrismicLink } from '@prismicio/svelte';
+	import '$lib/sass/global.scss'
+	import { page } from '$app/stores'
+	import { PrismicLink } from '@prismicio/svelte'
 
 	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data
 
 	//learn how to get the proper types lul
 	/** @type any */
-	const { navigation, settings, footer } = data;
+	const { navigation, settings, footer } = data
 
-	let date = new Date().getFullYear();
+	let date = new Date().getFullYear()
 </script>
 
 <svelte:head>
@@ -68,7 +68,6 @@
 			grid-column: content;
 			display: flex;
 			flex-wrap: wrap;
-			// grid-auto-flow: column;
 			justify-content: space-between;
 			align-items: center;
 		}
@@ -76,7 +75,7 @@
 
 	.logo {
 		display: block;
-		font-size: 1.5rem;
+		font-size: 1.85rem;
 		color: white;
 	}
 

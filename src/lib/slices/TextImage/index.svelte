@@ -1,8 +1,8 @@
 <script>
-	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
+	import { PrismicImage, PrismicRichText } from '@prismicio/svelte'
 	/** @type {import("@prismicio/client").Content.CardSlice} */
-	export let slice;
-	$$restProps;
+	export let slice
+	$$restProps
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
@@ -42,16 +42,20 @@
 		place-self: center;
 		border-radius: var(--radius-img);
 		overflow: hidden;
+
+		@media (min-width: 600px) {
+			justify-self: end;
+		}
 	}
 
 	[data-slice-variation*='ImageLeft'] {
-		figure {
-			grid-template-areas: 'img text';
-			@media (max-width: 600px) {
-				grid-column: full;
-				grid-template-areas:
-					'img'
-					'text';
+		@media (min-width: 600px) {
+			figure {
+				grid-template-areas: 'img text';
+
+				.img {
+					justify-self: start;
+				}
 			}
 		}
 	}
@@ -66,6 +70,10 @@
 		}
 
 		@media (max-width: 600px) {
+			& > * {
+				grid-column: full;
+			}
+
 			figcaption {
 				padding: var(--content-padding);
 			}

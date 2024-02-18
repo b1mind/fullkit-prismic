@@ -1,16 +1,16 @@
 <script>
-	import * as prismic from '@prismicio/client';
-	import { PrismicImage } from '@prismicio/svelte';
-	import Label from '$lib/components/Label.svelte';
+	import * as prismic from '@prismicio/client'
+	import { PrismicImage } from '@prismicio/svelte'
+	import Label from '$lib/components/Label.svelte'
 
-	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte'
+	import Button from '$lib/components/Button.svelte'
 
 	//fixme type for bg_color?
 	// /** @type {import("@prismicio/client").Content.AntiHeroSlice} */
 	/** @type any */
-	export let slice;
-	$$restProps;
+	export let slice
+	$$restProps
 </script>
 
 <section
@@ -29,7 +29,7 @@
 		</div>
 
 		<header>
-			<div>
+			<hgroup>
 				{#if prismic.isFilled.richText(slice.primary.heading)}
 					<PrismicRichText
 						field={slice.primary.heading}
@@ -46,7 +46,7 @@
 				{#if prismic.isFilled.richText(slice.primary.text2)}
 					<PrismicRichText field={slice.primary.text2} />
 				{/if}
-			</div>
+			</hgroup>
 
 			{#if prismic.isFilled.link(slice.primary.button)}
 				<Button {slice}>
@@ -65,7 +65,7 @@
 	header {
 		padding: var(--content-padding);
 
-		& > div {
+		& > hgroup {
 			font-size: var(--text-md);
 			text-shadow: 2px 1px 2px black;
 		}

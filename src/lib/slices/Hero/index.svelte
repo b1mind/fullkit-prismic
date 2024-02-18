@@ -1,19 +1,19 @@
 <script>
-	import * as prismic from '@prismicio/client';
-	import { PrismicImage } from '@prismicio/svelte';
-	import Label from './Label.svelte';
+	import * as prismic from '@prismicio/client'
+	import { PrismicImage } from '@prismicio/svelte'
+	import Label from './Label.svelte'
 
-	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte'
+	import Button from '$lib/components/Button.svelte'
 
 	/** @type {import("@prismicio/client").Content.AntiHeroSlice} */
-	export let slice;
-	$$restProps;
+	export let slice
+	$$restProps
 
 	//note learn if we can pass in props to components
 	const components = {
 		label: Label
-	};
+	}
 </script>
 
 <section

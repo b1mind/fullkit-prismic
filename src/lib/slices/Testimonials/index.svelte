@@ -1,11 +1,11 @@
 <script>
-	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
-	import { page } from '$app/stores';
-	import { PrismicImage } from '@prismicio/svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte'
+	import { page } from '$app/stores'
+	import { PrismicImage } from '@prismicio/svelte'
 
 	/** @type {import("@prismicio/client").Content.TestimonialsSlice} */
-	export let slice;
-	$$restProps;
+	export let slice
+	$$restProps
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
