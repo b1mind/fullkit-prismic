@@ -97,7 +97,6 @@
 	}
 
 	[data-slice-variation='default'] {
-		grid-column: content;
 		padding-block: var(--spacer-lg);
 
 		.img {

@@ -1044,7 +1044,7 @@ export interface HeroSliceDefaultPrimary {
 	 * - **API ID Path**: hero.primary.button_type
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	button_type: prismic.SelectField<'primary' | 'secondary' | 'third', 'filled'>
+	button_type: prismic.SelectField<'primary' | 'secondary', 'filled'>
 
 	/**
 	 * image field in *Hero → Primary*
@@ -1432,9 +1432,52 @@ export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
 >
 
 /**
+ * Primary content in *Testimonials → Primary*
+ */
+export interface TestimonialsSliceZPopoutPrimary {
+	/**
+	 * heading field in *Testimonials → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: testimonials.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField
+}
+
+/**
+ * Primary content in *Testimonials → Items*
+ */
+export interface TestimonialsSliceZPopoutItem {
+	/**
+	 * testimonial field in *Testimonials → Items*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: testimonials.items[].testimonial
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	testimonial: prismic.ContentRelationshipField<'testimonial'>
+}
+
+/**
+ * zPopout variation for Testimonials Slice
+ *
+ * - **API ID**: `zPopout`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceZPopout = prismic.SharedSliceVariation<
+	'zPopout',
+	Simplify<TestimonialsSliceZPopoutPrimary>,
+	Simplify<TestimonialsSliceZPopoutItem>
+>
+
+/**
  * Slice variation for *Testimonials*
  */
-type TestimonialsSliceVariation = TestimonialsSliceDefault
+type TestimonialsSliceVariation = TestimonialsSliceDefault | TestimonialsSliceZPopout
 
 /**
  * Testimonials Shared Slice
@@ -1520,8 +1563,11 @@ declare module '@prismicio/client' {
 			TestimonialsSlice,
 			TestimonialsSliceDefaultPrimary,
 			TestimonialsSliceDefaultItem,
+			TestimonialsSliceZPopoutPrimary,
+			TestimonialsSliceZPopoutItem,
 			TestimonialsSliceVariation,
-			TestimonialsSliceDefault
+			TestimonialsSliceDefault,
+			TestimonialsSliceZPopout
 		}
 	}
 }

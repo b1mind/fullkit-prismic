@@ -1,7 +1,7 @@
 <script>
-	export let tag = 'h1';
+	export let tag = 'h1'
 	/** @type {"sm" | "md" | "lg" | "xl"} */
-	export let size = 'lg';
+	export let size = 'lg'
 </script>
 
 <svelte:element

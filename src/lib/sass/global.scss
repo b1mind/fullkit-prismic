@@ -276,11 +276,11 @@ section + section {
 	grid-template-columns: inherit;
 }
 
-.wrap-pop {
+.wrap-pop, [data-slice-variation*='Popout'] {
 	grid-column: popout;
 }
 
-.wrap-content {
+.wrap-content, [data-slice-variation*='default']:not(.wrap-full) {
 	grid-column: content;
 }
 

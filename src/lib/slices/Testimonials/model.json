@@ -34,6 +34,37 @@
           }
         }
       }
+    },
+    {
+      "id": "zPopout",
+      "name": "zPopout",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "testimonial": {
+          "type": "Link",
+          "config": {
+            "label": "testimonial",
+            "select": "document",
+            "customtypes": [
+              "testimonial"
+            ]
+          }
+        }
+      }
     }
   ]
 }
