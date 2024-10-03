@@ -776,16 +776,6 @@ export type CardSliceDefault = prismic.SharedSliceVariation<
  */
 export interface CardSlicePImageLeftPrimary {
 	/**
-	 * image field in *TextImage → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: card.primary.image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>
-
-	/**
 	 * text field in *TextImage → Primary*
 	 *
 	 * - **Field Type**: Rich Text
@@ -794,6 +784,16 @@ export interface CardSlicePImageLeftPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField
+
+	/**
+	 * image field in *TextImage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>
 }
 
 /**
